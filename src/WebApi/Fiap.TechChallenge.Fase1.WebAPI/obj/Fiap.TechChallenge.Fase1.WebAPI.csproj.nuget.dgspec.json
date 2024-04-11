@@ -1,0 +1,254 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\Backup_16062023\\FIAP\\Tech Challenge\\CRUD\\src\\WebApi\\Fiap.TechChallenge.Fase1.WebAPI\\Fiap.TechChallenge.Fase1.WebAPI.csproj": {}
+  },
+  "projects": {
+    "D:\\Backup_16062023\\FIAP\\Tech Challenge\\CRUD\\src\\Services\\Fiap.TechChallenge.Fase1.Aplicacao\\Fiap.TechChallenge.Fase1.Aplicacao.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Backup_16062023\\FIAP\\Tech Challenge\\CRUD\\src\\Services\\Fiap.TechChallenge.Fase1.Aplicacao\\Fiap.TechChallenge.Fase1.Aplicacao.csproj",
+        "projectName": "Fiap.TechChallenge.Fase1.Aplicacao",
+        "projectPath": "D:\\Backup_16062023\\FIAP\\Tech Challenge\\CRUD\\src\\Services\\Fiap.TechChallenge.Fase1.Aplicacao\\Fiap.TechChallenge.Fase1.Aplicacao.csproj",
+        "packagesPath": "C:\\Users\\IgorS\\.nuget\\packages\\",
+        "outputPath": "D:\\Backup_16062023\\FIAP\\Tech Challenge\\CRUD\\src\\Services\\Fiap.TechChallenge.Fase1.Aplicacao\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\IgorS\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "D:\\Backup_16062023\\FIAP\\Tech Challenge\\CRUD\\src\\Services\\Fiap.TechChallenge.Fase1.Dominio\\Fiap.TechChallenge.Fase1.Dominio.csproj": {
+                "projectPath": "D:\\Backup_16062023\\FIAP\\Tech Challenge\\CRUD\\src\\Services\\Fiap.TechChallenge.Fase1.Dominio\\Fiap.TechChallenge.Fase1.Dominio.csproj"
+              },
+              "D:\\Backup_16062023\\FIAP\\Tech Challenge\\CRUD\\src\\Services\\Fiap.TechChallenge.Fase1.Infraestructure\\Fiap.TechChallenge.Fase1.Infraestructure.csproj": {
+                "projectPath": "D:\\Backup_16062023\\FIAP\\Tech Challenge\\CRUD\\src\\Services\\Fiap.TechChallenge.Fase1.Infraestructure\\Fiap.TechChallenge.Fase1.Infraestructure.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\Backup_16062023\\FIAP\\Tech Challenge\\CRUD\\src\\Services\\Fiap.TechChallenge.Fase1.Dominio\\Fiap.TechChallenge.Fase1.Dominio.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Backup_16062023\\FIAP\\Tech Challenge\\CRUD\\src\\Services\\Fiap.TechChallenge.Fase1.Dominio\\Fiap.TechChallenge.Fase1.Dominio.csproj",
+        "projectName": "Fiap.TechChallenge.Fase1.Dominio",
+        "projectPath": "D:\\Backup_16062023\\FIAP\\Tech Challenge\\CRUD\\src\\Services\\Fiap.TechChallenge.Fase1.Dominio\\Fiap.TechChallenge.Fase1.Dominio.csproj",
+        "packagesPath": "C:\\Users\\IgorS\\.nuget\\packages\\",
+        "outputPath": "D:\\Backup_16062023\\FIAP\\Tech Challenge\\CRUD\\src\\Services\\Fiap.TechChallenge.Fase1.Dominio\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\IgorS\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[13.0.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\Backup_16062023\\FIAP\\Tech Challenge\\CRUD\\src\\Services\\Fiap.TechChallenge.Fase1.Infraestructure\\Fiap.TechChallenge.Fase1.Infraestructure.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Backup_16062023\\FIAP\\Tech Challenge\\CRUD\\src\\Services\\Fiap.TechChallenge.Fase1.Infraestructure\\Fiap.TechChallenge.Fase1.Infraestructure.csproj",
+        "projectName": "Fiap.TechChallenge.Fase1.Infraestructure",
+        "projectPath": "D:\\Backup_16062023\\FIAP\\Tech Challenge\\CRUD\\src\\Services\\Fiap.TechChallenge.Fase1.Infraestructure\\Fiap.TechChallenge.Fase1.Infraestructure.csproj",
+        "packagesPath": "C:\\Users\\IgorS\\.nuget\\packages\\",
+        "outputPath": "D:\\Backup_16062023\\FIAP\\Tech Challenge\\CRUD\\src\\Services\\Fiap.TechChallenge.Fase1.Infraestructure\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\IgorS\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\Backup_16062023\\FIAP\\Tech Challenge\\CRUD\\src\\WebApi\\Fiap.TechChallenge.Fase1.WebAPI\\Fiap.TechChallenge.Fase1.WebAPI.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Backup_16062023\\FIAP\\Tech Challenge\\CRUD\\src\\WebApi\\Fiap.TechChallenge.Fase1.WebAPI\\Fiap.TechChallenge.Fase1.WebAPI.csproj",
+        "projectName": "Fiap.TechChallenge.Fase1.WebAPI",
+        "projectPath": "D:\\Backup_16062023\\FIAP\\Tech Challenge\\CRUD\\src\\WebApi\\Fiap.TechChallenge.Fase1.WebAPI\\Fiap.TechChallenge.Fase1.WebAPI.csproj",
+        "packagesPath": "C:\\Users\\IgorS\\.nuget\\packages\\",
+        "outputPath": "D:\\Backup_16062023\\FIAP\\Tech Challenge\\CRUD\\src\\WebApi\\Fiap.TechChallenge.Fase1.WebAPI\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\IgorS\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "D:\\Backup_16062023\\FIAP\\Tech Challenge\\CRUD\\src\\Services\\Fiap.TechChallenge.Fase1.Aplicacao\\Fiap.TechChallenge.Fase1.Aplicacao.csproj": {
+                "projectPath": "D:\\Backup_16062023\\FIAP\\Tech Challenge\\CRUD\\src\\Services\\Fiap.TechChallenge.Fase1.Aplicacao\\Fiap.TechChallenge.Fase1.Aplicacao.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.4.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

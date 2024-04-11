@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "dgSpecHash": "PUANozXlnGUzWTOFsa8kNa6x51OLZU1cKYoFnvzn7GXoz/8R+vJrU585kJcJ8zG7nyAgj3BtW6lrFPLxOE3MOg==",
+  "success": true,
+  "projectFilePath": "D:\\Backup_16062023\\FIAP\\Tech Challenge\\CRUD\\src\\Services\\Fiap.TechChallenge.Fase1.Dominio\\Fiap.TechChallenge.Fase1.Dominio.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\IgorS\\.nuget\\packages\\automapper\\13.0.1\\automapper.13.0.1.nupkg.sha512",
+    "C:\\Users\\IgorS\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\6.0.0\\microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512",
+    "C:\\Users\\IgorS\\.nuget\\packages\\microsoft.extensions.options\\6.0.0\\microsoft.extensions.options.6.0.0.nupkg.sha512",
+    "C:\\Users\\IgorS\\.nuget\\packages\\microsoft.extensions.primitives\\6.0.0\\microsoft.extensions.primitives.6.0.0.nupkg.sha512",
+    "C:\\Users\\IgorS\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

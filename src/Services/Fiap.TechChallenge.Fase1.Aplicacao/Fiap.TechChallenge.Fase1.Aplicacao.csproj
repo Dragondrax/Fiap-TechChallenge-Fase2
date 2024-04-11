@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Fiap.TechChallenge.Fase1.Dominio\Fiap.TechChallenge.Fase1.Dominio.csproj" />
+    <ProjectReference Include="..\Fiap.TechChallenge.Fase1.Infraestructure\Fiap.TechChallenge.Fase1.Infraestructure.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="UseCase\" />
+  </ItemGroup>
+
+</Project>
