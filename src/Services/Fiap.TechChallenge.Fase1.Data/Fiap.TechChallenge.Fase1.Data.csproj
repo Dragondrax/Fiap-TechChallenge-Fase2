@@ -21,9 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Entidades\" />
-    <Folder Include="Context\" />
-    <Folder Include="Repository\" />
+    <ProjectReference Include="..\..\Core\Fiap.TechChallenge.Fase1.SharedKernel\Fiap.TechChallenge.Fase1.SharedKernel.csproj" />
   </ItemGroup>
 
 </Project>
