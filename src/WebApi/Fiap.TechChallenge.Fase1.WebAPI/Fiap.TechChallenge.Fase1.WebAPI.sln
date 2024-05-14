@@ -3,17 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34322.80
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fiap.TechChallenge.Fase1.WebAPI", "Fiap.TechChallenge.Fase1.WebAPI.csproj", "{8C41F3FA-C9FE-4B24-B637-32BC376E209A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fiap.TechChallenge.Fase1.WebAPI", "Fiap.TechChallenge.Fase1.WebAPI.csproj", "{8C41F3FA-C9FE-4B24-B637-32BC376E209A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{B0899FF5-553E-4C6B-B451-5D41794EDCCB}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{B6DBC303-74AA-43B7-A200-4F2169756EAC}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{B6DBC303-74AA-43B7-A200-4F2169756EAC}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{7F3EB643-D505-462D-8BD7-95C379FDD5F0}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WebAPI", "WebAPI", "{AD0A1FAB-B4E7-4DA6-9363-1E627E45F614}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fiap.TechChallenge.Fase1.Aplicacao", "..\..\Services\Fiap.TechChallenge.Fase1.Aplicacao\Fiap.TechChallenge.Fase1.Aplicacao.csproj", "{2FA34E6A-4FEF-4810-9173-D7BC07D10119}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fiap.TechChallenge.Fase1.Aplicacao", "..\..\Services\Fiap.TechChallenge.Fase1.Aplicacao\Fiap.TechChallenge.Fase1.Aplicacao.csproj", "{2FA34E6A-4FEF-4810-9173-D7BC07D10119}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fiap.TechChallenge.Fase1.Data", "..\..\Services\Fiap.TechChallenge.Fase1.Data\Fiap.TechChallenge.Fase1.Data.csproj", "{A804C977-6EDC-4C69-B647-4080DDBAB4EA}"
 	ProjectSection(ProjectDependencies) = postProject
@@ -34,9 +34,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fiap.TechChallenge.Fase1.Io
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{10F16659-30EC-429B-A980-AA341FE3D11B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fiap.TechChallenge.Fase1.SharedKernel", "..\..\Core\Fiap.TechChallenge.Fase1.SharedKernel\Fiap.TechChallenge.Fase1.SharedKernel.csproj", "{AB82990C-7698-43DF-8501-477D0162CEAF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fiap.TechChallenge.Fase1.SharedKernel", "..\..\Core\Fiap.TechChallenge.Fase1.SharedKernel\Fiap.TechChallenge.Fase1.SharedKernel.csproj", "{AB82990C-7698-43DF-8501-477D0162CEAF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fiap.TechChallenge.Fase1.Tests", "..\..\Tests\Fiap.TechChallenge.Fase1.Tests\Fiap.TechChallenge.Fase1.Tests.csproj", "{B9160930-A5EE-4965-B3E0-0F2542B90743}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fiap.TechChallenge.Fase1.Tests", "..\..\Tests\Fiap.TechChallenge.Fase1.Tests\Fiap.TechChallenge.Fase1.Tests.csproj", "{B9160930-A5EE-4965-B3E0-0F2542B90743}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
