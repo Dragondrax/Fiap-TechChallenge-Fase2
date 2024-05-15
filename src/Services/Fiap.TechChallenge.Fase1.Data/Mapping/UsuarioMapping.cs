@@ -12,7 +12,7 @@ namespace Fiap.TechChallenge.Fase1.Data.Mapping
             builder.HasKey(x => x.Id);
 
             builder.Property(x => x.Nome).HasColumnType("VARCHAR(100)").IsRequired();
-            builder.Property(x => x.Role).HasColumnType("VARCHAR(5)").IsRequired();
+            builder.Property(x => x.Role).HasColumnType("SMALLINT").IsRequired();
             builder.Property(x => x.Email).HasColumnType("VARCHAR(150)").IsRequired();
             builder.Property(x => x.Senha).HasColumnType("VARCHAR(500)").IsRequired();
 

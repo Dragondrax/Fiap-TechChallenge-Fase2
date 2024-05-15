@@ -10,4 +10,9 @@
     <PackageReference Include="AutoMapper" Version="13.0.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Fiap.TechChallenge.Fase1.Data\Fiap.TechChallenge.Fase1.Data.csproj" />
+    <ProjectReference Include="..\Fiap.TechChallenge.Fase1.Infraestructure\Fiap.TechChallenge.Fase1.Infraestructure.csproj" />
+  </ItemGroup>
+
 </Project>

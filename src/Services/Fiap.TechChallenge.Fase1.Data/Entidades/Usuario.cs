@@ -1,4 +1,5 @@
-﻿using Fiap.TechChallenge.Fase1.SharedKernel.Data;
+﻿using Fiap.TechChallenge.Fase1.Infraestructure.Enum;
+using Fiap.TechChallenge.Fase1.SharedKernel.Data;
 using System.Data;
 
 namespace Fiap.TechChallenge.Fase1.Data.Entidades
@@ -8,11 +9,11 @@ namespace Fiap.TechChallenge.Fase1.Data.Entidades
         public string Nome { get; private set; }
         public string Email { get; private set; }
         public string Senha { get; private set; }
-        public string Role { get; private set; }
+        public Roles Role { get; private set; }
 
-        private Usuario() { }
+        public Usuario() { }
 
-        public Usuario(string nome, string email, string senha, string role)
+        public Usuario(string nome, string email, string senha, Roles role)
         {
             Nome = nome;
             Email = email;
@@ -21,7 +22,7 @@ namespace Fiap.TechChallenge.Fase1.Data.Entidades
             AtualizarDtCadastro();
         }
 
-        public void AlterarUsuario(string nome, string email, string senha, string role) 
+        public void AlterarUsuario(string nome, string email, string senha, Roles role) 
         {
             Nome = nome;
             Email = email;
