@@ -20,7 +20,6 @@ namespace Fiap.TechChallenge.Fase1.Dominio
         public async Task<ResponseModel> SalvarUsuario(CriarUsuarioDTO usuarioDto)
         {
             var validacao = new CriarUsuarioDTOValidator().Validate(usuarioDto);
-            var hashSenha = await GerarHashSenhaUsuario(usuarioDto.Senha);
             if (!validacao.IsValid)
             {
                 _mensagem = validacao.Errors.Select(x => x.ErrorMessage).ToList();
@@ -31,6 +30,8 @@ namespace Fiap.TechChallenge.Fase1.Dominio
             
             if(usuario is null)
             {
+                var hashSenha = await GerarHashSenhaUsuario(usuarioDto.Senha);
+
                 var novoUsuario = new Usuario(usuarioDto.Nome, usuarioDto.Email, hashSenha, usuarioDto.Role);
 
                 await _usuarioRepository.AdicionarAsync(novoUsuario);
