@@ -11,7 +11,7 @@ namespace Fiap.TechChallenge.Fase1.Data.Repository.Usuario
 
         }
 
-        public async Task<Entidades.Usuario> ObterPorEmail(string email)
+        public async Task<Entidades.Usuario> ObterPorEmailAsync(string email)
         {
             return await Db.Usuario.FirstOrDefaultAsync(x => x.Email == email && x.Excluido == false);
         }
