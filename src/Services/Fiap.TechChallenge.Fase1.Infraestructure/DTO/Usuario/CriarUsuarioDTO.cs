@@ -1,4 +1,5 @@
 ﻿using Fiap.TechChallenge.Fase1.Infraestructure.Enum;
+using Fiap.TechChallenge.Fase1.SharedKernel;
 using FluentValidation;
 
 namespace Fiap.TechChallenge.Fase1.Infraestructure.DTO
@@ -17,29 +18,29 @@ namespace Fiap.TechChallenge.Fase1.Infraestructure.DTO
         {
             RuleFor(x => x.Email)
                 .NotEmpty()
-                .WithMessage("O Email não pode ser vazio")
+                .WithMessage(MensagemErroUsuario.MENSAGEM_EMAIL_NAO_PODE_SER_VAZIO)
                 .NotNull()
-                .WithMessage("O Email não pode ser nulo")
+                .WithMessage(MensagemErroUsuario.MENSAGEM_EMAIL_NAO_PODE_SER_NULO)
                 .EmailAddress()
-                .WithMessage("O Email não está no formato correto");
+                .WithMessage(MensagemErroUsuario.MENSAGEM_EMAIL_NAO_ESTA_NO_FORMATO_CORRETO);
 
             RuleFor(x => x.Nome)
                 .NotEmpty()
-                .WithMessage("O Nome não pode ser vazio")
+                .WithMessage(MensagemErroUsuario.MENSAGEM_NOME_NAO_PODE_SER_VAZIO)
                 .NotNull()
-                .WithMessage("O Nome não pode ser nulo");
+                .WithMessage(MensagemErroUsuario.MENSAGEM_NOME_NAO_PODE_SER_NULO);
 
             RuleFor(x => x.Role)
                 .NotNull()
-                .WithMessage("O Role não pode ser nulo");
+                .WithMessage(MensagemErroUsuario.MENSAGEM_ROLE_NAO_PODE_SER_NULO);
 
             RuleFor(x => x.Senha)
                 .NotEmpty()
-                .WithMessage("A Senha não pode ser vazio")
+                .WithMessage(MensagemErroUsuario.MENSAGEM_SENHA_NAO_PODE_SER_VAZIO)
                 .MinimumLength(10)
-                .WithMessage("A Senha não pode ser menor que 10 caracteres")
+                .WithMessage(MensagemErroUsuario.MENSAGEM_SENHA_NAO_PODE_SER_MENOR_QUE_10_CARACTERES)
                 .NotNull()
-                .WithMessage("A Senha não pode ser nulo");
+                .WithMessage(MensagemErroUsuario.MENSAGEM_SENHA_NAO_PODE_SER_NULO);
         }
     }
 }

@@ -24,7 +24,7 @@ namespace Fiap.TechChallenge.Fase1.WebAPI.Controllers
             if (resultado.Sucesso == true)
                 return Ok(resultado);
             else if (resultado.Sucesso == false && resultado.Objeto is null && resultado.Mensagem.Any(x => String.IsNullOrEmpty(x)))
-                return StatusCode(500);
+                return StatusCode(500, "Ops, parece ");
             else
                 return BadRequest(resultado);
         }

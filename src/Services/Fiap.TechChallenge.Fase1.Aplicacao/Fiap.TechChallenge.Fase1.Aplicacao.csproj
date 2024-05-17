@@ -11,8 +11,4 @@
     <ProjectReference Include="..\Fiap.TechChallenge.Fase1.Infraestructure\Fiap.TechChallenge.Fase1.Infraestructure.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="UseCase\" />
-  </ItemGroup>
-
 </Project>
