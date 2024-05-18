@@ -8,5 +8,6 @@ namespace Fiap.TechChallenge.Fase1.Dominio
     {
         Task<ResponseModel> SalvarUsuario(CriarUsuarioDTO usuarioDto);
         Task<ResponseModel> AutenticarUsuario(AutenticarUsuarioDTO usuarioDto);
+        Task<ResponseModel> BuscarUsuario(string email);
     }
 }

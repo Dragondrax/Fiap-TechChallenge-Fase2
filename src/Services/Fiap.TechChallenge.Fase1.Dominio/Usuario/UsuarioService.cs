@@ -2,13 +2,14 @@
 using Fiap.TechChallenge.Fase1.Data.Repository;
 using Fiap.TechChallenge.Fase1.Infraestructure.DTO;
 using Fiap.TechChallenge.Fase1.Infraestructure.DTO.Usuario;
+using Fiap.TechChallenge.Fase1.Infraestructure.Enum;
 using Fiap.TechChallenge.Fase1.SharedKernel;
 using Fiap.TechChallenge.Fase1.SharedKernel.Model;
 using FluentValidation;
 using static BCrypt.Net.BCrypt;
 
 namespace Fiap.TechChallenge.Fase1.Dominio
-{ 
+{
     public class UsuarioService : IUsuarioService
     {
         private readonly IUsuarioRepository _usuarioRepository;
@@ -16,7 +17,7 @@ namespace Fiap.TechChallenge.Fase1.Dominio
         private const int WorkFactor = 12;
         public UsuarioService(IUsuarioRepository usuarioRepository)
         {
-            
+
             _usuarioRepository = usuarioRepository;
         }
         public async Task<ResponseModel> SalvarUsuario(CriarUsuarioDTO usuarioDto)
@@ -29,8 +30,8 @@ namespace Fiap.TechChallenge.Fase1.Dominio
             }
 
             var usuario = await _usuarioRepository.ObterPorEmailAsync(usuarioDto.Email);
-            
-            if(usuario is null)
+
+            if (usuario is null)
             {
                 var hashSenha = await GerarHashSenhaUsuario(usuarioDto.Senha);
 
@@ -58,10 +59,10 @@ namespace Fiap.TechChallenge.Fase1.Dominio
 
             var usuario = await _usuarioRepository.ObterPorEmailAsync(usuarioDto.Email);
 
-            if(usuario is not null)
+            if (usuario is not null)
             {
                 //Valida Senha
-                if(Verify(usuarioDto.Senha, usuario.Senha))
+                if (Verify(usuarioDto.Senha, usuario.Senha))
                 {
                     var token = ""; //gerar token com os dados
 
@@ -76,6 +77,28 @@ namespace Fiap.TechChallenge.Fase1.Dominio
         private async Task<string> GerarHashSenhaUsuario(string senha)
         {
             return await Task.FromResult(HashPassword(senha, WorkFactor));
+        }
+
+        public async Task<ResponseModel> BuscarUsuario(string email)
+        {
+            var usuario = await _usuarioRepository.ObterPorEmailAsync(email);
+
+            if (usuario is not null)
+            {
+                var exibeUsuario = new UsuarioDTO
+                {
+                    Nome = usuario.Nome,
+                    Email = usuario.Email,
+                    Role = usuario.Role.ToString()
+                };
+
+                _mensagem.Add(MensagemErroGenerico.MENSAGEM_SUCESSO);
+                return new ResponseModel(_mensagem, true, exibeUsuario);
+            }
+
+            _mensagem.Add(MensagemErroUsuario.MENSAGEM_USUARIO_NAO_ENCONTRADO);
+
+            return new ResponseModel(_mensagem, false, null);
         }
     }
 }
