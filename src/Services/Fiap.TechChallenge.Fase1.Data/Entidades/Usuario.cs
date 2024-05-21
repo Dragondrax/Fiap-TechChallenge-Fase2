@@ -1,6 +1,5 @@
 ﻿using Fiap.TechChallenge.Fase1.Infraestructure.Enum;
 using Fiap.TechChallenge.Fase1.SharedKernel.Data;
-using System.Data;
 
 namespace Fiap.TechChallenge.Fase1.Data.Entidades
 {
@@ -16,7 +15,7 @@ namespace Fiap.TechChallenge.Fase1.Data.Entidades
         public Usuario(string nome, string email, string senha, Roles role)
         {
             Nome = nome;
-            Email = email;
+            Email = email.ToLower();
             Senha = senha;
             Role = role;
             AtualizarDtCadastro();
@@ -25,7 +24,7 @@ namespace Fiap.TechChallenge.Fase1.Data.Entidades
         public void AlterarUsuario(string nome, string email, string senha, Roles role) 
         {
             Nome = nome;
-            Email = email;
+            Email = email.ToLower();
             Senha = senha;
             Role = role;
             AtualizarDtAlteracao();

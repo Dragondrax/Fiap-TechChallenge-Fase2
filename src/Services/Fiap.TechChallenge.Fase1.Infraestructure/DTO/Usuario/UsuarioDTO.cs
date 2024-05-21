@@ -1,4 +1,5 @@
 ﻿using Fiap.TechChallenge.Fase1.Infraestructure.Enum;
+using System.Data;
 
 namespace Fiap.TechChallenge.Fase1.Infraestructure.DTO.Usuario
 {
@@ -6,6 +7,13 @@ namespace Fiap.TechChallenge.Fase1.Infraestructure.DTO.Usuario
     {
         public string Nome { get; set; }
         public string Email { get; set; }
-        public string Role { get; set; }
+        public Roles Role { get; set; }
+
+        public UsuarioDTO(string nome, string email, Roles role) 
+        {
+            Nome = nome;
+            Email = email;
+            Role = role;
+        }
     }
 }

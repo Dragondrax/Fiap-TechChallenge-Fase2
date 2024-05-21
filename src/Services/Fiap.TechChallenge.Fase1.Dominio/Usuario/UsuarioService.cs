@@ -35,7 +35,7 @@ namespace Fiap.TechChallenge.Fase1.Dominio
             {
                 var hashSenha = await GerarHashSenhaUsuario(usuarioDto.Senha);
 
-                var novoUsuario = new Usuario(usuarioDto.Nome, usuarioDto.Email, hashSenha, usuarioDto.Role);
+                var novoUsuario = new Usuario(usuarioDto.Nome, usuarioDto.Email.ToLower(), hashSenha, usuarioDto.Role);
 
                 await _usuarioRepository.AdicionarAsync(novoUsuario);
 
@@ -78,26 +78,43 @@ namespace Fiap.TechChallenge.Fase1.Dominio
         {
             return await Task.FromResult(HashPassword(senha, WorkFactor));
         }
-
         public async Task<ResponseModel> BuscarUsuario(string email)
         {
-            var usuario = await _usuarioRepository.ObterPorEmailAsync(email);
+            var usuario = await _usuarioRepository.ObterPorEmailAsync(email.ToLower());
 
             if (usuario is not null)
             {
-                var exibeUsuario = new UsuarioDTO
-                {
-                    Nome = usuario.Nome,
-                    Email = usuario.Email,
-                    Role = usuario.Role.ToString()
-                };
+                var exibeUsuario = new UsuarioDTO(usuario.Nome, usuario.Email, usuario.Role);
 
                 _mensagem.Add(MensagemErroGenerico.MENSAGEM_SUCESSO);
                 return new ResponseModel(_mensagem, true, exibeUsuario);
             }
 
             _mensagem.Add(MensagemErroUsuario.MENSAGEM_USUARIO_NAO_ENCONTRADO);
+            return new ResponseModel(_mensagem, false, null);
+        }
 
+        public async Task<ResponseModel> RemoverUsuario(string email)
+        {
+            var usuario = await _usuarioRepository.ObterPorEmailAsync(email.ToLower());
+
+            if (usuario is not null)
+            {
+                if (usuario.Role == Roles.Administrador)
+                {
+                    _mensagem.Add(MensagemErroUsuario.MENSAGEM_NAO_REMOVER_ESSE_USUARIO);
+                    return new ResponseModel(_mensagem, false, null);
+                }
+
+                usuario.ExcluirUsuario();
+
+                await _usuarioRepository.RemoverAsync(usuario);
+
+                _mensagem.Add(MensagemErroGenerico.MENSAGEM_SUCESSO);
+                return new ResponseModel(_mensagem, true, usuario);
+            }
+
+            _mensagem.Add(MensagemErroUsuario.MENSAGEM_USUARIO_NAO_ENCONTRADO);
             return new ResponseModel(_mensagem, false, null);
         }
     }
