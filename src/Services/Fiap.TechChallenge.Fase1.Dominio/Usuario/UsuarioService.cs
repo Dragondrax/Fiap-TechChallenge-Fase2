@@ -5,7 +5,6 @@ using Fiap.TechChallenge.Fase1.Infraestructure.DTO.Usuario;
 using Fiap.TechChallenge.Fase1.Infraestructure.Enum;
 using Fiap.TechChallenge.Fase1.SharedKernel;
 using Fiap.TechChallenge.Fase1.SharedKernel.Model;
-using FluentValidation;
 using static BCrypt.Net.BCrypt;
 
 namespace Fiap.TechChallenge.Fase1.Dominio
@@ -29,7 +28,7 @@ namespace Fiap.TechChallenge.Fase1.Dominio
                 return new ResponseModel(_mensagem, false, null);
             }
 
-            var usuario = await _usuarioRepository.ObterPorEmailAsync(usuarioDto.Email);
+            var usuario = await _usuarioRepository.ObterPorEmailAsync(usuarioDto.Email.ToLower());
 
             if (usuario is null)
             {
@@ -57,7 +56,7 @@ namespace Fiap.TechChallenge.Fase1.Dominio
                 return new ResponseModel(_mensagem, false, null);
             }
 
-            var usuario = await _usuarioRepository.ObterPorEmailAsync(usuarioDto.Email);
+            var usuario = await _usuarioRepository.ObterPorEmailAsync(usuarioDto.Email.ToLower());
 
             if (usuario is not null)
             {
@@ -84,7 +83,7 @@ namespace Fiap.TechChallenge.Fase1.Dominio
 
             if (usuario is not null)
             {
-                var exibeUsuario = new UsuarioDTO(usuario.Nome, usuario.Email, usuario.Role);
+                var exibeUsuario = new UsuarioDTO(usuario.Nome, usuario.Email.ToLower(), usuario.Role);
 
                 _mensagem.Add(MensagemErroGenerico.MENSAGEM_SUCESSO);
                 return new ResponseModel(_mensagem, true, exibeUsuario);
@@ -93,7 +92,6 @@ namespace Fiap.TechChallenge.Fase1.Dominio
             _mensagem.Add(MensagemErroUsuario.MENSAGEM_USUARIO_NAO_ENCONTRADO);
             return new ResponseModel(_mensagem, false, null);
         }
-
         public async Task<ResponseModel> RemoverUsuario(string email)
         {
             var usuario = await _usuarioRepository.ObterPorEmailAsync(email.ToLower());

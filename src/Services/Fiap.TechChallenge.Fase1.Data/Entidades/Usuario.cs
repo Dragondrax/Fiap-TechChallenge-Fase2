@@ -15,7 +15,7 @@ namespace Fiap.TechChallenge.Fase1.Data.Entidades
         public Usuario(string nome, string email, string senha, Roles role)
         {
             Nome = nome;
-            Email = email.ToLower();
+            Email = email;
             Senha = senha;
             Role = role;
             AtualizarDtCadastro();
@@ -24,7 +24,7 @@ namespace Fiap.TechChallenge.Fase1.Data.Entidades
         public void AlterarUsuario(string nome, string email, string senha, Roles role) 
         {
             Nome = nome;
-            Email = email.ToLower();
+            Email = email;
             Senha = senha;
             Role = role;
             AtualizarDtAlteracao();
