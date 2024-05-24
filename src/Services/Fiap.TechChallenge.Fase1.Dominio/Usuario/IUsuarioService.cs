@@ -9,6 +9,5 @@ namespace Fiap.TechChallenge.Fase1.Dominio
         Task<ResponseModel> SalvarUsuario(CriarUsuarioDTO usuarioDto);
         Task<ResponseModel> AutenticarUsuario(AutenticarUsuarioDTO usuarioDto);
         Task<string> GerarHashSenhaUsuario(string senha);
-        bool VerificaSenhaUsuario(string senha, string hashed);
     }
 }
