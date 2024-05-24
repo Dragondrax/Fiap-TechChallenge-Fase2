@@ -4,33 +4,31 @@ using FluentValidation;
 
 namespace Fiap.TechChallenge.Fase1.Infraestructure.DTO.Usuario
 {
-    public class UsuarioDTO
+    public class BuscarUsuarioDTO
     {
-        public Guid Id { get; set; }
         public string Nome { get; set; }
         public string Email { get; set; }
         public Roles Role { get; set; }
 
-        public UsuarioDTO(Guid id, string nome, string email, Roles role) 
+        public BuscarUsuarioDTO(string nome, string email, Roles role)
         {
-            Id = id;
             Nome = nome;
             Email = email;
             Role = role;
         }
     }
 
-    public class UsuarioDTOValidator : AbstractValidator<UsuarioDTO>
+    public class BuscarUsuarioDTOValidator : AbstractValidator<BuscarUsuarioDTO>
     {
-        public UsuarioDTOValidator()
+        public BuscarUsuarioDTOValidator()
         {
             RuleFor(x => x.Email)
-                .NotEmpty()
-                .WithMessage(MensagemErroUsuario.MENSAGEM_EMAIL_NAO_PODE_SER_VAZIO)
-                .NotNull()
-                .WithMessage(MensagemErroUsuario.MENSAGEM_EMAIL_NAO_PODE_SER_NULO)
-                .EmailAddress()
-                .WithMessage(MensagemErroUsuario.MENSAGEM_EMAIL_NAO_ESTA_NO_FORMATO_CORRETO);
+                 .NotEmpty()
+                 .WithMessage(MensagemErroUsuario.MENSAGEM_EMAIL_NAO_PODE_SER_VAZIO)
+                 .NotNull()
+                 .WithMessage(MensagemErroUsuario.MENSAGEM_EMAIL_NAO_PODE_SER_NULO)
+                 .EmailAddress()
+                 .WithMessage(MensagemErroUsuario.MENSAGEM_EMAIL_NAO_ESTA_NO_FORMATO_CORRETO);
 
             RuleFor(x => x.Nome)
                 .NotEmpty()

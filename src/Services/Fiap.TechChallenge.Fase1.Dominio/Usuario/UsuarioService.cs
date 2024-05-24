@@ -77,13 +77,13 @@ namespace Fiap.TechChallenge.Fase1.Dominio
         {
             return await Task.FromResult(HashPassword(senha, WorkFactor));
         }
-        public async Task<ResponseModel> BuscarUsuario(string email)
+        public async Task<ResponseModel> BuscarUsuario(BuscarUsuarioDTO usuario)
         {
-            var usuario = await _usuarioRepository.ObterPorEmailAsync(email.ToLower());
+            var usuarioValido = await _usuarioRepository.ObterPorEmailAsync(usuario.Email.ToLower());
 
-            if (usuario is not null)
+            if (usuarioValido is not null)
             {
-                var exibeUsuario = new UsuarioDTO(usuario.Nome, usuario.Email.ToLower(), usuario.Role);
+                var exibeUsuario = new UsuarioDTO(usuarioValido.Id, usuarioValido.Nome, usuarioValido.Email.ToLower(), usuarioValido.Role);
 
                 _mensagem.Add(MensagemErroGenerico.MENSAGEM_SUCESSO);
                 return new ResponseModel(_mensagem, true, exibeUsuario);
@@ -92,9 +92,9 @@ namespace Fiap.TechChallenge.Fase1.Dominio
             _mensagem.Add(MensagemErroUsuario.MENSAGEM_USUARIO_NAO_ENCONTRADO);
             return new ResponseModel(_mensagem, false, null);
         }
-        public async Task<ResponseModel> RemoverUsuario(string email)
+        public async Task<ResponseModel> RemoverUsuario(Guid id)
         {
-            var usuario = await _usuarioRepository.ObterPorEmailAsync(email.ToLower());
+            var usuario = await _usuarioRepository.ObterPorIdAsync(id);
 
             if (usuario is not null)
             {

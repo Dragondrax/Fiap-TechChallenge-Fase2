@@ -5,5 +5,6 @@ namespace Fiap.TechChallenge.Fase1.Data.Repository
     public interface IUsuarioRepository : IRepository<Entidades.Usuario>
     {
         Task<Entidades.Usuario> ObterPorEmailAsync(string email);
+        Task<Entidades.Usuario> ObterPorIdAsync(Guid id);
     }
 }

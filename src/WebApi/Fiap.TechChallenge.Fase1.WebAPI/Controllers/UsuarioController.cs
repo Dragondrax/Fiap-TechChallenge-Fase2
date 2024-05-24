@@ -42,10 +42,10 @@ namespace Fiap.TechChallenge.Fase1.WebAPI.Controllers
                 return BadRequest(resultado);
         }
 
-        [HttpGet("BuscarUsuario")]
-        public async Task<IActionResult> BuscarUsuario(string email)
+        [HttpPost("BuscarUsuario")]
+        public async Task<IActionResult> BuscarUsuario(BuscarUsuarioDTO usuario)
         {
-            var resultado = await _usuarioService.BuscarUsuario(email);
+            var resultado = await _usuarioService.BuscarUsuario(usuario);
             if (resultado.Sucesso == true)
                 return Ok(resultado);
             else if (resultado.Sucesso == false && resultado.Objeto is null && resultado.Mensagem.Any(x => String.IsNullOrEmpty(x)))
@@ -55,9 +55,9 @@ namespace Fiap.TechChallenge.Fase1.WebAPI.Controllers
         }
 
         [HttpDelete("RemoverUsuario")]
-        public async Task<IActionResult> RemoverUsuario(string email)
+        public async Task<IActionResult> RemoverUsuario(Guid id)
         {
-            var resultado = await _usuarioService.RemoverUsuario(email);
+            var resultado = await _usuarioService.RemoverUsuario(id);
             if (resultado.Sucesso == true)
                 return Ok(resultado);
             else if (resultado.Sucesso == false && resultado.Objeto is null && resultado.Mensagem.Any(x => String.IsNullOrEmpty(x)))
