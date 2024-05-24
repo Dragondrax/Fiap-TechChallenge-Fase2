@@ -1,5 +1,6 @@
 ﻿using Fiap.TechChallenge.Fase1.Data.Entidades;
 using Fiap.TechChallenge.Fase1.Data.Repository;
+using Fiap.TechChallenge.Fase1.Dominio.Token;
 using Fiap.TechChallenge.Fase1.Infraestructure.DTO;
 using Fiap.TechChallenge.Fase1.Infraestructure.DTO.Usuario;
 using Fiap.TechChallenge.Fase1.SharedKernel;
@@ -11,12 +12,14 @@ namespace Fiap.TechChallenge.Fase1.Dominio
     public class UsuarioService : IUsuarioService
     {
         private readonly IUsuarioRepository _usuarioRepository;
+        private readonly ITokenService _tokenService;
         private List<string> _mensagem = new List<string>();
         private const int WorkFactor = 12;
 
-        public UsuarioService(IUsuarioRepository usuarioRepository)
+        public UsuarioService(IUsuarioRepository usuarioRepository, ITokenService tokenService)
         {
             _usuarioRepository = usuarioRepository;
+            _tokenService = tokenService;
         }
 
         public async Task<ResponseModel> SalvarUsuario(CriarUsuarioDTO usuarioDto)
@@ -64,7 +67,7 @@ namespace Fiap.TechChallenge.Fase1.Dominio
                 //Valida Senha
                 if(Verify(usuarioDto.Senha, usuario.Senha))
                 {
-                    var token = ""; //gerar token com os dados
+                    var token = await _tokenService.ObterToken(usuarioDto);
 
                     _mensagem.Add(MensagemErroGenerico.MENSAGEM_SUCESSO);
                     return new ResponseModel(_mensagem, true, token);
@@ -79,11 +82,5 @@ namespace Fiap.TechChallenge.Fase1.Dominio
         {
             return await Task.FromResult(HashPassword(senha, WorkFactor));
         }
-
-        public bool VerificaSenhaUsuario(string senha, string hashed)
-        {
-            return Verify(senha, hashed);
-        }
-
     }
 }

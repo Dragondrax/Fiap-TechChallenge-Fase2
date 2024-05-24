@@ -1,7 +1,4 @@
-using Fiap.TechChallenge.Fase1.Aplicacao.Token;
-using Fiap.TechChallenge.Fase1.Data.Context;
 using Fiap.TechChallenge.Fase1.IoC;
-using Fiap.TechChallenge.Fase1.WebAPI.Interfaces;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
@@ -14,8 +11,6 @@ builder.Services.AddControllers();
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-
-builder.Services.AddScoped<ITokenService, TokenService>();
 
 builder.Services.AddCors(options =>
 {
