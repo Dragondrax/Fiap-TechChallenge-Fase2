@@ -19,18 +19,21 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fiap.TechChallenge.Fase1.Da
 	ProjectSection(ProjectDependencies) = postProject
 		{8751490E-07DD-4A3E-A610-F0AFBF1AB3C2} = {8751490E-07DD-4A3E-A610-F0AFBF1AB3C2}
 		{AB82990C-7698-43DF-8501-477D0162CEAF} = {AB82990C-7698-43DF-8501-477D0162CEAF}
+		{CC240799-AF68-40A3-B337-7B1BC15FBDF2} = {CC240799-AF68-40A3-B337-7B1BC15FBDF2}
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fiap.TechChallenge.Fase1.Dominio", "..\..\Services\Fiap.TechChallenge.Fase1.Dominio\Fiap.TechChallenge.Fase1.Dominio.csproj", "{CC240799-AF68-40A3-B337-7B1BC15FBDF2}"
 	ProjectSection(ProjectDependencies) = postProject
 		{8751490E-07DD-4A3E-A610-F0AFBF1AB3C2} = {8751490E-07DD-4A3E-A610-F0AFBF1AB3C2}
-		{A804C977-6EDC-4C69-B647-4080DDBAB4EA} = {A804C977-6EDC-4C69-B647-4080DDBAB4EA}
 		{AB82990C-7698-43DF-8501-477D0162CEAF} = {AB82990C-7698-43DF-8501-477D0162CEAF}
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fiap.TechChallenge.Fase1.Infraestructure", "..\..\Services\Fiap.TechChallenge.Fase1.Infraestructure\Fiap.TechChallenge.Fase1.Infraestructure.csproj", "{8751490E-07DD-4A3E-A610-F0AFBF1AB3C2}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fiap.TechChallenge.Fase1.IoC", "..\..\Services\Fiap.TechChallenge.Fase1.IoC\Fiap.TechChallenge.Fase1.IoC.csproj", "{B791F81C-5B29-4826-9619-58E6454E59EE}"
+	ProjectSection(ProjectDependencies) = postProject
+		{2FA34E6A-4FEF-4810-9173-D7BC07D10119} = {2FA34E6A-4FEF-4810-9173-D7BC07D10119}
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{10F16659-30EC-429B-A980-AA341FE3D11B}"
 EndProject

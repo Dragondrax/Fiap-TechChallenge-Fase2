@@ -2,7 +2,7 @@
 
 namespace Fiap.TechChallenge.Fase1.Data.Entidades
 {
-    public class Contato : Entity
+    public class Contato : Entity, IAggregateRoot
     {
         public string Nome { get; private set; }
         public int DDD { get; private set; }

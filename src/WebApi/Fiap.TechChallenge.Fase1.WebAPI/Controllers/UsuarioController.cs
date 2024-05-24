@@ -1,4 +1,4 @@
-﻿using Fiap.TechChallenge.Fase1.Dominio;
+﻿using Fiap.TechChallenge.Fase1.Aplicacao;
 using Fiap.TechChallenge.Fase1.Infraestructure.DTO;
 using Fiap.TechChallenge.Fase1.Infraestructure.DTO.Usuario;
 using Fiap.TechChallenge.Fase1.SharedKernel;

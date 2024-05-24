@@ -1,10 +1,9 @@
 ﻿using Fiap.TechChallenge.Fase1.Infraestructure.Enum;
 using Fiap.TechChallenge.Fase1.SharedKernel.Data;
-using System.Data;
 
 namespace Fiap.TechChallenge.Fase1.Data.Entidades
 {
-    public class Usuario : Entity
+    public class Usuario : Entity, IAggregateRoot
     {
         public string Nome { get; private set; }
         public string Email { get; private set; }

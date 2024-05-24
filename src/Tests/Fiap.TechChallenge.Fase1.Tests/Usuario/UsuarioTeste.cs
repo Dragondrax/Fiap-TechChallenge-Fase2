@@ -1,13 +1,11 @@
 ﻿using Bogus;
-using Fiap.TechChallenge.Fase1.Dominio;
+using Fiap.TechChallenge.Fase1.Aplicacao;
 using Fiap.TechChallenge.Fase1.Infraestructure.DTO;
 using Fiap.TechChallenge.Fase1.Infraestructure.DTO.Usuario;
 using Fiap.TechChallenge.Fase1.Infraestructure.Enum;
 using Fiap.TechChallenge.Fase1.SharedKernel;
 using Fiap.TechChallenge.Fase1.SharedKernel.Model;
-using Microsoft.VisualStudio.TestPlatform.CommunicationUtilities;
 using Moq;
-using System.Linq;
 using Xunit;
 
 namespace Fiap.TechChallenge.Fase1.Tests.Usuario
