@@ -1,5 +1,4 @@
-﻿
-using Fiap.TechChallenge.Fase1.Data.Context;
+﻿using Fiap.TechChallenge.Fase1.Data.Context;
 using Microsoft.EntityFrameworkCore;
 
 namespace Fiap.TechChallenge.Fase1.Data.Repository.Usuario
