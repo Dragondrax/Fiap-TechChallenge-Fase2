@@ -5518,19 +5518,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\IgorS\\.nuget\\packages\\": {}
+    "C:\\Users\\caios\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Backup_16062023\\FIAP\\Tech Challenge\\CRUD\\src\\Tests\\Fiap.TechChallenge.Fase1.Tests\\Fiap.TechChallenge.Fase1.Tests.csproj",
+      "projectUniqueName": "C:\\Users\\caios\\OneDrive\\Área de Trabalho\\backup\\Fiap-TechChallenge-Fase1\\src\\Tests\\Fiap.TechChallenge.Fase1.Tests\\Fiap.TechChallenge.Fase1.Tests.csproj",
       "projectName": "Fiap.TechChallenge.Fase1.Tests",
-      "projectPath": "D:\\Backup_16062023\\FIAP\\Tech Challenge\\CRUD\\src\\Tests\\Fiap.TechChallenge.Fase1.Tests\\Fiap.TechChallenge.Fase1.Tests.csproj",
-      "packagesPath": "C:\\Users\\IgorS\\.nuget\\packages\\",
-      "outputPath": "D:\\Backup_16062023\\FIAP\\Tech Challenge\\CRUD\\src\\Tests\\Fiap.TechChallenge.Fase1.Tests\\obj\\",
+      "projectPath": "C:\\Users\\caios\\OneDrive\\Área de Trabalho\\backup\\Fiap-TechChallenge-Fase1\\src\\Tests\\Fiap.TechChallenge.Fase1.Tests\\Fiap.TechChallenge.Fase1.Tests.csproj",
+      "packagesPath": "C:\\Users\\caios\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\caios\\OneDrive\\Área de Trabalho\\backup\\Fiap-TechChallenge-Fase1\\src\\Tests\\Fiap.TechChallenge.Fase1.Tests\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\IgorS\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\caios\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -5550,6 +5550,11 @@
         "warnAsError": [
           "NU1605"
         ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -5593,7 +5598,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

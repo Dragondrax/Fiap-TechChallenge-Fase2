@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Backup_16062023\\FIAP\\Tech Challenge\\CRUD\\src\\Core\\Fiap.TechChallenge.Fase1.SharedKernel\\Fiap.TechChallenge.Fase1.SharedKernel.csproj": {}
+    "C:\\Users\\caios\\OneDrive\\Área de Trabalho\\backup\\Fiap-TechChallenge-Fase1\\src\\Core\\Fiap.TechChallenge.Fase1.SharedKernel\\Fiap.TechChallenge.Fase1.SharedKernel.csproj": {}
   },
   "projects": {
-    "D:\\Backup_16062023\\FIAP\\Tech Challenge\\CRUD\\src\\Core\\Fiap.TechChallenge.Fase1.SharedKernel\\Fiap.TechChallenge.Fase1.SharedKernel.csproj": {
+    "C:\\Users\\caios\\OneDrive\\Área de Trabalho\\backup\\Fiap-TechChallenge-Fase1\\src\\Core\\Fiap.TechChallenge.Fase1.SharedKernel\\Fiap.TechChallenge.Fase1.SharedKernel.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Backup_16062023\\FIAP\\Tech Challenge\\CRUD\\src\\Core\\Fiap.TechChallenge.Fase1.SharedKernel\\Fiap.TechChallenge.Fase1.SharedKernel.csproj",
+        "projectUniqueName": "C:\\Users\\caios\\OneDrive\\Área de Trabalho\\backup\\Fiap-TechChallenge-Fase1\\src\\Core\\Fiap.TechChallenge.Fase1.SharedKernel\\Fiap.TechChallenge.Fase1.SharedKernel.csproj",
         "projectName": "Fiap.TechChallenge.Fase1.SharedKernel",
-        "projectPath": "D:\\Backup_16062023\\FIAP\\Tech Challenge\\CRUD\\src\\Core\\Fiap.TechChallenge.Fase1.SharedKernel\\Fiap.TechChallenge.Fase1.SharedKernel.csproj",
-        "packagesPath": "C:\\Users\\IgorS\\.nuget\\packages\\",
-        "outputPath": "D:\\Backup_16062023\\FIAP\\Tech Challenge\\CRUD\\src\\Core\\Fiap.TechChallenge.Fase1.SharedKernel\\obj\\",
+        "projectPath": "C:\\Users\\caios\\OneDrive\\Área de Trabalho\\backup\\Fiap-TechChallenge-Fase1\\src\\Core\\Fiap.TechChallenge.Fase1.SharedKernel\\Fiap.TechChallenge.Fase1.SharedKernel.csproj",
+        "packagesPath": "C:\\Users\\caios\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\caios\\OneDrive\\Área de Trabalho\\backup\\Fiap-TechChallenge-Fase1\\src\\Core\\Fiap.TechChallenge.Fase1.SharedKernel\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\IgorS\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\caios\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -34,11 +34,22 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.4, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -55,7 +66,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

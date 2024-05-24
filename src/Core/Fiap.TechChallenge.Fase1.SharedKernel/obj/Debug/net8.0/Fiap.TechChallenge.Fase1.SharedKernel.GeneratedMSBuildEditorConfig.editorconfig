@@ -8,6 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Fiap.TechChallenge.Fase1.SharedKernel
-build_property.ProjectDir = D:\Backup_16062023\FIAP\Tech Challenge\CRUD\src\Core\Fiap.TechChallenge.Fase1.SharedKernel\
+build_property.ProjectDir = C:\Users\caios\OneDrive\Área de Trabalho\backup\Fiap-TechChallenge-Fase1\src\Core\Fiap.TechChallenge.Fase1.SharedKernel\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 

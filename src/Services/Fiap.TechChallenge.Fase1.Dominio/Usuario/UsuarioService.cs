@@ -5,12 +5,10 @@ using Fiap.TechChallenge.Fase1.Infraestructure.DTO;
 using Fiap.TechChallenge.Fase1.Infraestructure.DTO.Usuario;
 using Fiap.TechChallenge.Fase1.SharedKernel;
 using Fiap.TechChallenge.Fase1.SharedKernel.Model;
-using FluentValidation;
-using Microsoft.AspNetCore.Identity;
 using static BCrypt.Net.BCrypt;
 
 namespace Fiap.TechChallenge.Fase1.Dominio
-{ 
+{
     public class UsuarioService : IUsuarioService
     {
         private readonly IUsuarioRepository _usuarioRepository;
@@ -52,6 +50,7 @@ namespace Fiap.TechChallenge.Fase1.Dominio
 
             return new ResponseModel(_mensagem, false, null);
         }
+
         public async Task<ResponseModel> AutenticarUsuario(AutenticarUsuarioDTO usuarioDto)
         {
             var validacao = new AutenticarUsuarioDTOValidator().Validate(usuarioDto);
