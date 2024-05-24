@@ -25,7 +25,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Services\Fiap.TechChallenge.Fase1.Data\Fiap.TechChallenge.Fase1.Data.csproj" />
     <ProjectReference Include="..\..\Services\Fiap.TechChallenge.Fase1.Dominio\Fiap.TechChallenge.Fase1.Dominio.csproj" />
   </ItemGroup>
 

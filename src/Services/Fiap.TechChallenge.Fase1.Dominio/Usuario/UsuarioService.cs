@@ -1,5 +1,6 @@
 ﻿using Fiap.TechChallenge.Fase1.Data.Entidades;
 using Fiap.TechChallenge.Fase1.Data.Repository;
+using Fiap.TechChallenge.Fase1.Dominio.Token;
 using Fiap.TechChallenge.Fase1.Infraestructure.DTO;
 using Fiap.TechChallenge.Fase1.Infraestructure.DTO.Usuario;
 using Fiap.TechChallenge.Fase1.Infraestructure.Enum;
@@ -12,13 +13,16 @@ namespace Fiap.TechChallenge.Fase1.Dominio
     public class UsuarioService : IUsuarioService
     {
         private readonly IUsuarioRepository _usuarioRepository;
+        private readonly ITokenService _tokenService;
         private List<string> _mensagem = new List<string>();
         private const int WorkFactor = 12;
-        public UsuarioService(IUsuarioRepository usuarioRepository)
-        {
 
+        public UsuarioService(IUsuarioRepository usuarioRepository, ITokenService tokenService)
+        {
             _usuarioRepository = usuarioRepository;
+            _tokenService = tokenService;
         }
+
         public async Task<ResponseModel> SalvarUsuario(CriarUsuarioDTO usuarioDto)
         {
             var validacao = new CriarUsuarioDTOValidator().Validate(usuarioDto);
@@ -47,6 +51,7 @@ namespace Fiap.TechChallenge.Fase1.Dominio
 
             return new ResponseModel(_mensagem, false, null);
         }
+
         public async Task<ResponseModel> AutenticarUsuario(AutenticarUsuarioDTO usuarioDto)
         {
             var validacao = new AutenticarUsuarioDTOValidator().Validate(usuarioDto);
@@ -63,7 +68,7 @@ namespace Fiap.TechChallenge.Fase1.Dominio
                 //Valida Senha
                 if (Verify(usuarioDto.Senha, usuario.Senha))
                 {
-                    var token = ""; //gerar token com os dados
+                    var token = await _tokenService.ObterToken(usuarioDto);
 
                     _mensagem.Add(MensagemErroGenerico.MENSAGEM_SUCESSO);
                     return new ResponseModel(_mensagem, true, token);
@@ -73,7 +78,8 @@ namespace Fiap.TechChallenge.Fase1.Dominio
             _mensagem.Add(MensagemErroUsuario.MENSAGEM_USUARIO_LOGIN_SENHA_INCORRETA);
             return new ResponseModel(_mensagem, false, null);
         }
-        private async Task<string> GerarHashSenhaUsuario(string senha)
+
+        public async Task<string> GerarHashSenhaUsuario(string senha)
         {
             return await Task.FromResult(HashPassword(senha, WorkFactor));
         }

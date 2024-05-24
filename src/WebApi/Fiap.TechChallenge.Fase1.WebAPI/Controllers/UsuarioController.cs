@@ -3,12 +3,14 @@ using Fiap.TechChallenge.Fase1.Dominio;
 using Fiap.TechChallenge.Fase1.Infraestructure.DTO;
 using Fiap.TechChallenge.Fase1.Infraestructure.DTO.Usuario;
 using Fiap.TechChallenge.Fase1.SharedKernel;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Fiap.TechChallenge.Fase1.WebAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class UsuarioController : ControllerBase
     {
         private readonly IUsuarioService _usuarioService;
@@ -31,6 +33,7 @@ namespace Fiap.TechChallenge.Fase1.WebAPI.Controllers
         }
 
         [HttpPost("Autenticar")]
+        [AllowAnonymous]
         public async Task<IActionResult> Autenticar(AutenticarUsuarioDTO usuario)
         {
             var resultado = await _usuarioService.AutenticarUsuario(usuario);
