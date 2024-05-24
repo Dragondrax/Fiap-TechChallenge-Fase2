@@ -15,8 +15,6 @@ namespace Fiap.TechChallenge.Fase1.IoC
 
             services.AddScoped<IUsuarioRepository, UsuarioRepository>();
             services.AddScoped<IUsuarioService, UsuarioService>();
-            services.AddScoped<IContatoRepository, ContatoRepository>();
-            services.AddScoped<IContatoService, ContatoService>();
 
             return services;
         }

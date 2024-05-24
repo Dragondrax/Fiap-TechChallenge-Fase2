@@ -1,20 +1,86 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Backup_16062023\\FIAP\\Tech Challenge\\CRUD\\src\\WebApi\\Fiap.TechChallenge.Fase1.WebAPI\\Fiap.TechChallenge.Fase1.WebAPI.csproj": {}
+    "C:\\Users\\caios\\OneDrive\\Área de Trabalho\\backup\\Fiap-TechChallenge-Fase1\\src\\WebApi\\Fiap.TechChallenge.Fase1.WebAPI\\Fiap.TechChallenge.Fase1.WebAPI.csproj": {}
   },
   "projects": {
-    "D:\\Backup_16062023\\FIAP\\Tech Challenge\\CRUD\\src\\Services\\Fiap.TechChallenge.Fase1.Aplicacao\\Fiap.TechChallenge.Fase1.Aplicacao.csproj": {
+    "C:\\Users\\caios\\OneDrive\\Área de Trabalho\\backup\\Fiap-TechChallenge-Fase1\\src\\Core\\Fiap.TechChallenge.Fase1.SharedKernel\\Fiap.TechChallenge.Fase1.SharedKernel.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Backup_16062023\\FIAP\\Tech Challenge\\CRUD\\src\\Services\\Fiap.TechChallenge.Fase1.Aplicacao\\Fiap.TechChallenge.Fase1.Aplicacao.csproj",
-        "projectName": "Fiap.TechChallenge.Fase1.Aplicacao",
-        "projectPath": "D:\\Backup_16062023\\FIAP\\Tech Challenge\\CRUD\\src\\Services\\Fiap.TechChallenge.Fase1.Aplicacao\\Fiap.TechChallenge.Fase1.Aplicacao.csproj",
-        "packagesPath": "C:\\Users\\IgorS\\.nuget\\packages\\",
-        "outputPath": "D:\\Backup_16062023\\FIAP\\Tech Challenge\\CRUD\\src\\Services\\Fiap.TechChallenge.Fase1.Aplicacao\\obj\\",
+        "projectUniqueName": "C:\\Users\\caios\\OneDrive\\Área de Trabalho\\backup\\Fiap-TechChallenge-Fase1\\src\\Core\\Fiap.TechChallenge.Fase1.SharedKernel\\Fiap.TechChallenge.Fase1.SharedKernel.csproj",
+        "projectName": "Fiap.TechChallenge.Fase1.SharedKernel",
+        "projectPath": "C:\\Users\\caios\\OneDrive\\Área de Trabalho\\backup\\Fiap-TechChallenge-Fase1\\src\\Core\\Fiap.TechChallenge.Fase1.SharedKernel\\Fiap.TechChallenge.Fase1.SharedKernel.csproj",
+        "packagesPath": "C:\\Users\\caios\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\caios\\OneDrive\\Área de Trabalho\\backup\\Fiap-TechChallenge-Fase1\\src\\Core\\Fiap.TechChallenge.Fase1.SharedKernel\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\IgorS\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\caios\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.4, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\caios\\OneDrive\\Área de Trabalho\\backup\\Fiap-TechChallenge-Fase1\\src\\Services\\Fiap.TechChallenge.Fase1.Aplicacao\\Fiap.TechChallenge.Fase1.Aplicacao.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\caios\\OneDrive\\Área de Trabalho\\backup\\Fiap-TechChallenge-Fase1\\src\\Services\\Fiap.TechChallenge.Fase1.Aplicacao\\Fiap.TechChallenge.Fase1.Aplicacao.csproj",
+        "projectName": "Fiap.TechChallenge.Fase1.Aplicacao",
+        "projectPath": "C:\\Users\\caios\\OneDrive\\Área de Trabalho\\backup\\Fiap-TechChallenge-Fase1\\src\\Services\\Fiap.TechChallenge.Fase1.Aplicacao\\Fiap.TechChallenge.Fase1.Aplicacao.csproj",
+        "packagesPath": "C:\\Users\\caios\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\caios\\OneDrive\\Área de Trabalho\\backup\\Fiap-TechChallenge-Fase1\\src\\Services\\Fiap.TechChallenge.Fase1.Aplicacao\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\caios\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -28,11 +94,11 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\Backup_16062023\\FIAP\\Tech Challenge\\CRUD\\src\\Services\\Fiap.TechChallenge.Fase1.Dominio\\Fiap.TechChallenge.Fase1.Dominio.csproj": {
-                "projectPath": "D:\\Backup_16062023\\FIAP\\Tech Challenge\\CRUD\\src\\Services\\Fiap.TechChallenge.Fase1.Dominio\\Fiap.TechChallenge.Fase1.Dominio.csproj"
+              "C:\\Users\\caios\\OneDrive\\Área de Trabalho\\backup\\Fiap-TechChallenge-Fase1\\src\\Services\\Fiap.TechChallenge.Fase1.Dominio\\Fiap.TechChallenge.Fase1.Dominio.csproj": {
+                "projectPath": "C:\\Users\\caios\\OneDrive\\Área de Trabalho\\backup\\Fiap-TechChallenge-Fase1\\src\\Services\\Fiap.TechChallenge.Fase1.Dominio\\Fiap.TechChallenge.Fase1.Dominio.csproj"
               },
-              "D:\\Backup_16062023\\FIAP\\Tech Challenge\\CRUD\\src\\Services\\Fiap.TechChallenge.Fase1.Infraestructure\\Fiap.TechChallenge.Fase1.Infraestructure.csproj": {
-                "projectPath": "D:\\Backup_16062023\\FIAP\\Tech Challenge\\CRUD\\src\\Services\\Fiap.TechChallenge.Fase1.Infraestructure\\Fiap.TechChallenge.Fase1.Infraestructure.csproj"
+              "C:\\Users\\caios\\OneDrive\\Área de Trabalho\\backup\\Fiap-TechChallenge-Fase1\\src\\Services\\Fiap.TechChallenge.Fase1.Infraestructure\\Fiap.TechChallenge.Fase1.Infraestructure.csproj": {
+                "projectPath": "C:\\Users\\caios\\OneDrive\\Área de Trabalho\\backup\\Fiap-TechChallenge-Fase1\\src\\Services\\Fiap.TechChallenge.Fase1.Infraestructure\\Fiap.TechChallenge.Fase1.Infraestructure.csproj"
               }
             }
           }
@@ -41,6 +107,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -62,21 +133,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\Backup_16062023\\FIAP\\Tech Challenge\\CRUD\\src\\Services\\Fiap.TechChallenge.Fase1.Dominio\\Fiap.TechChallenge.Fase1.Dominio.csproj": {
+    "C:\\Users\\caios\\OneDrive\\Área de Trabalho\\backup\\Fiap-TechChallenge-Fase1\\src\\Services\\Fiap.TechChallenge.Fase1.Data\\Fiap.TechChallenge.Fase1.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Backup_16062023\\FIAP\\Tech Challenge\\CRUD\\src\\Services\\Fiap.TechChallenge.Fase1.Dominio\\Fiap.TechChallenge.Fase1.Dominio.csproj",
-        "projectName": "Fiap.TechChallenge.Fase1.Dominio",
-        "projectPath": "D:\\Backup_16062023\\FIAP\\Tech Challenge\\CRUD\\src\\Services\\Fiap.TechChallenge.Fase1.Dominio\\Fiap.TechChallenge.Fase1.Dominio.csproj",
-        "packagesPath": "C:\\Users\\IgorS\\.nuget\\packages\\",
-        "outputPath": "D:\\Backup_16062023\\FIAP\\Tech Challenge\\CRUD\\src\\Services\\Fiap.TechChallenge.Fase1.Dominio\\obj\\",
+        "projectUniqueName": "C:\\Users\\caios\\OneDrive\\Área de Trabalho\\backup\\Fiap-TechChallenge-Fase1\\src\\Services\\Fiap.TechChallenge.Fase1.Data\\Fiap.TechChallenge.Fase1.Data.csproj",
+        "projectName": "Fiap.TechChallenge.Fase1.Data",
+        "projectPath": "C:\\Users\\caios\\OneDrive\\Área de Trabalho\\backup\\Fiap-TechChallenge-Fase1\\src\\Services\\Fiap.TechChallenge.Fase1.Data\\Fiap.TechChallenge.Fase1.Data.csproj",
+        "packagesPath": "C:\\Users\\caios\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\caios\\OneDrive\\Área de Trabalho\\backup\\Fiap-TechChallenge-Fase1\\src\\Services\\Fiap.TechChallenge.Fase1.Data\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\IgorS\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\caios\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -89,13 +160,118 @@
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\caios\\OneDrive\\Área de Trabalho\\backup\\Fiap-TechChallenge-Fase1\\src\\Core\\Fiap.TechChallenge.Fase1.SharedKernel\\Fiap.TechChallenge.Fase1.SharedKernel.csproj": {
+                "projectPath": "C:\\Users\\caios\\OneDrive\\Área de Trabalho\\backup\\Fiap-TechChallenge-Fase1\\src\\Core\\Fiap.TechChallenge.Fase1.SharedKernel\\Fiap.TechChallenge.Fase1.SharedKernel.csproj"
+              },
+              "C:\\Users\\caios\\OneDrive\\Área de Trabalho\\backup\\Fiap-TechChallenge-Fase1\\src\\Services\\Fiap.TechChallenge.Fase1.Infraestructure\\Fiap.TechChallenge.Fase1.Infraestructure.csproj": {
+                "projectPath": "C:\\Users\\caios\\OneDrive\\Área de Trabalho\\backup\\Fiap-TechChallenge-Fase1\\src\\Services\\Fiap.TechChallenge.Fase1.Infraestructure\\Fiap.TechChallenge.Fase1.Infraestructure.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.4, )"
+            },
+            "Microsoft.EntityFrameworkCore.Abstractions": {
+              "target": "Package",
+              "version": "[8.0.4, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.4, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.4, )"
+            },
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[8.0.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\caios\\OneDrive\\Área de Trabalho\\backup\\Fiap-TechChallenge-Fase1\\src\\Services\\Fiap.TechChallenge.Fase1.Dominio\\Fiap.TechChallenge.Fase1.Dominio.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\caios\\OneDrive\\Área de Trabalho\\backup\\Fiap-TechChallenge-Fase1\\src\\Services\\Fiap.TechChallenge.Fase1.Dominio\\Fiap.TechChallenge.Fase1.Dominio.csproj",
+        "projectName": "Fiap.TechChallenge.Fase1.Dominio",
+        "projectPath": "C:\\Users\\caios\\OneDrive\\Área de Trabalho\\backup\\Fiap-TechChallenge-Fase1\\src\\Services\\Fiap.TechChallenge.Fase1.Dominio\\Fiap.TechChallenge.Fase1.Dominio.csproj",
+        "packagesPath": "C:\\Users\\caios\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\caios\\OneDrive\\Área de Trabalho\\backup\\Fiap-TechChallenge-Fase1\\src\\Services\\Fiap.TechChallenge.Fase1.Dominio\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\caios\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "C:\\Users\\caios\\OneDrive\\Área de Trabalho\\backup\\Fiap-TechChallenge-Fase1\\src\\Services\\Fiap.TechChallenge.Fase1.Data\\Fiap.TechChallenge.Fase1.Data.csproj": {
+                "projectPath": "C:\\Users\\caios\\OneDrive\\Área de Trabalho\\backup\\Fiap-TechChallenge-Fase1\\src\\Services\\Fiap.TechChallenge.Fase1.Data\\Fiap.TechChallenge.Fase1.Data.csproj"
+              },
+              "C:\\Users\\caios\\OneDrive\\Área de Trabalho\\backup\\Fiap-TechChallenge-Fase1\\src\\Services\\Fiap.TechChallenge.Fase1.Infraestructure\\Fiap.TechChallenge.Fase1.Infraestructure.csproj": {
+                "projectPath": "C:\\Users\\caios\\OneDrive\\Área de Trabalho\\backup\\Fiap-TechChallenge-Fase1\\src\\Services\\Fiap.TechChallenge.Fase1.Infraestructure\\Fiap.TechChallenge.Fase1.Infraestructure.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -105,6 +281,10 @@
             "AutoMapper": {
               "target": "Package",
               "version": "[13.0.1, )"
+            },
+            "BCrypt.Net-Core": {
+              "target": "Package",
+              "version": "[1.6.0, )"
             }
           },
           "imports": [
@@ -123,76 +303,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\Backup_16062023\\FIAP\\Tech Challenge\\CRUD\\src\\Services\\Fiap.TechChallenge.Fase1.Infraestructure\\Fiap.TechChallenge.Fase1.Infraestructure.csproj": {
+    "C:\\Users\\caios\\OneDrive\\Área de Trabalho\\backup\\Fiap-TechChallenge-Fase1\\src\\Services\\Fiap.TechChallenge.Fase1.Infraestructure\\Fiap.TechChallenge.Fase1.Infraestructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Backup_16062023\\FIAP\\Tech Challenge\\CRUD\\src\\Services\\Fiap.TechChallenge.Fase1.Infraestructure\\Fiap.TechChallenge.Fase1.Infraestructure.csproj",
+        "projectUniqueName": "C:\\Users\\caios\\OneDrive\\Área de Trabalho\\backup\\Fiap-TechChallenge-Fase1\\src\\Services\\Fiap.TechChallenge.Fase1.Infraestructure\\Fiap.TechChallenge.Fase1.Infraestructure.csproj",
         "projectName": "Fiap.TechChallenge.Fase1.Infraestructure",
-        "projectPath": "D:\\Backup_16062023\\FIAP\\Tech Challenge\\CRUD\\src\\Services\\Fiap.TechChallenge.Fase1.Infraestructure\\Fiap.TechChallenge.Fase1.Infraestructure.csproj",
-        "packagesPath": "C:\\Users\\IgorS\\.nuget\\packages\\",
-        "outputPath": "D:\\Backup_16062023\\FIAP\\Tech Challenge\\CRUD\\src\\Services\\Fiap.TechChallenge.Fase1.Infraestructure\\obj\\",
+        "projectPath": "C:\\Users\\caios\\OneDrive\\Área de Trabalho\\backup\\Fiap-TechChallenge-Fase1\\src\\Services\\Fiap.TechChallenge.Fase1.Infraestructure\\Fiap.TechChallenge.Fase1.Infraestructure.csproj",
+        "packagesPath": "C:\\Users\\caios\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\caios\\OneDrive\\Área de Trabalho\\backup\\Fiap-TechChallenge-Fase1\\src\\Services\\Fiap.TechChallenge.Fase1.Infraestructure\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\IgorS\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
-        ],
-        "originalTargetFrameworks": [
-          "net8.0"
-        ],
-        "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {}
-        },
-        "frameworks": {
-          "net8.0": {
-            "targetAlias": "net8.0",
-            "projectReferences": {}
-          }
-        },
-        "warningProperties": {
-          "warnAsError": [
-            "NU1605"
-          ]
-        }
-      },
-      "frameworks": {
-        "net8.0": {
-          "targetAlias": "net8.0",
-          "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48",
-            "net481"
-          ],
-          "assetTargetFallback": true,
-          "warn": true,
-          "frameworkReferences": {
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            }
-          },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
-        }
-      }
-    },
-    "D:\\Backup_16062023\\FIAP\\Tech Challenge\\CRUD\\src\\WebApi\\Fiap.TechChallenge.Fase1.WebAPI\\Fiap.TechChallenge.Fase1.WebAPI.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "D:\\Backup_16062023\\FIAP\\Tech Challenge\\CRUD\\src\\WebApi\\Fiap.TechChallenge.Fase1.WebAPI\\Fiap.TechChallenge.Fase1.WebAPI.csproj",
-        "projectName": "Fiap.TechChallenge.Fase1.WebAPI",
-        "projectPath": "D:\\Backup_16062023\\FIAP\\Tech Challenge\\CRUD\\src\\WebApi\\Fiap.TechChallenge.Fase1.WebAPI\\Fiap.TechChallenge.Fase1.WebAPI.csproj",
-        "packagesPath": "C:\\Users\\IgorS\\.nuget\\packages\\",
-        "outputPath": "D:\\Backup_16062023\\FIAP\\Tech Challenge\\CRUD\\src\\WebApi\\Fiap.TechChallenge.Fase1.WebAPI\\obj\\",
-        "projectStyle": "PackageReference",
-        "configFilePaths": [
-          "C:\\Users\\IgorS\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\caios\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -206,8 +331,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\Backup_16062023\\FIAP\\Tech Challenge\\CRUD\\src\\Services\\Fiap.TechChallenge.Fase1.Aplicacao\\Fiap.TechChallenge.Fase1.Aplicacao.csproj": {
-                "projectPath": "D:\\Backup_16062023\\FIAP\\Tech Challenge\\CRUD\\src\\Services\\Fiap.TechChallenge.Fase1.Aplicacao\\Fiap.TechChallenge.Fase1.Aplicacao.csproj"
+              "C:\\Users\\caios\\OneDrive\\Área de Trabalho\\backup\\Fiap-TechChallenge-Fase1\\src\\Core\\Fiap.TechChallenge.Fase1.SharedKernel\\Fiap.TechChallenge.Fase1.SharedKernel.csproj": {
+                "projectPath": "C:\\Users\\caios\\OneDrive\\Área de Trabalho\\backup\\Fiap-TechChallenge-Fase1\\src\\Core\\Fiap.TechChallenge.Fase1.SharedKernel\\Fiap.TechChallenge.Fase1.SharedKernel.csproj"
               }
             }
           }
@@ -216,12 +341,194 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "FluentValidation.AspNetCore": {
+              "target": "Package",
+              "version": "[11.3.0, )"
+            },
+            "FluentValidation.DependencyInjectionExtensions": {
+              "target": "Package",
+              "version": "[11.9.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\caios\\OneDrive\\Área de Trabalho\\backup\\Fiap-TechChallenge-Fase1\\src\\Services\\Fiap.TechChallenge.Fase1.IoC\\Fiap.TechChallenge.Fase1.IoC.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\caios\\OneDrive\\Área de Trabalho\\backup\\Fiap-TechChallenge-Fase1\\src\\Services\\Fiap.TechChallenge.Fase1.IoC\\Fiap.TechChallenge.Fase1.IoC.csproj",
+        "projectName": "Fiap.TechChallenge.Fase1.IoC",
+        "projectPath": "C:\\Users\\caios\\OneDrive\\Área de Trabalho\\backup\\Fiap-TechChallenge-Fase1\\src\\Services\\Fiap.TechChallenge.Fase1.IoC\\Fiap.TechChallenge.Fase1.IoC.csproj",
+        "packagesPath": "C:\\Users\\caios\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\caios\\OneDrive\\Área de Trabalho\\backup\\Fiap-TechChallenge-Fase1\\src\\Services\\Fiap.TechChallenge.Fase1.IoC\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\caios\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "C:\\Users\\caios\\OneDrive\\Área de Trabalho\\backup\\Fiap-TechChallenge-Fase1\\src\\Services\\Fiap.TechChallenge.Fase1.Data\\Fiap.TechChallenge.Fase1.Data.csproj": {
+                "projectPath": "C:\\Users\\caios\\OneDrive\\Área de Trabalho\\backup\\Fiap-TechChallenge-Fase1\\src\\Services\\Fiap.TechChallenge.Fase1.Data\\Fiap.TechChallenge.Fase1.Data.csproj"
+              },
+              "C:\\Users\\caios\\OneDrive\\Área de Trabalho\\backup\\Fiap-TechChallenge-Fase1\\src\\Services\\Fiap.TechChallenge.Fase1.Dominio\\Fiap.TechChallenge.Fase1.Dominio.csproj": {
+                "projectPath": "C:\\Users\\caios\\OneDrive\\Área de Trabalho\\backup\\Fiap-TechChallenge-Fase1\\src\\Services\\Fiap.TechChallenge.Fase1.Dominio\\Fiap.TechChallenge.Fase1.Dominio.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.Extensions.DependencyInjection": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\caios\\OneDrive\\Área de Trabalho\\backup\\Fiap-TechChallenge-Fase1\\src\\WebApi\\Fiap.TechChallenge.Fase1.WebAPI\\Fiap.TechChallenge.Fase1.WebAPI.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\caios\\OneDrive\\Área de Trabalho\\backup\\Fiap-TechChallenge-Fase1\\src\\WebApi\\Fiap.TechChallenge.Fase1.WebAPI\\Fiap.TechChallenge.Fase1.WebAPI.csproj",
+        "projectName": "Fiap.TechChallenge.Fase1.WebAPI",
+        "projectPath": "C:\\Users\\caios\\OneDrive\\Área de Trabalho\\backup\\Fiap-TechChallenge-Fase1\\src\\WebApi\\Fiap.TechChallenge.Fase1.WebAPI\\Fiap.TechChallenge.Fase1.WebAPI.csproj",
+        "packagesPath": "C:\\Users\\caios\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\caios\\OneDrive\\Área de Trabalho\\backup\\Fiap-TechChallenge-Fase1\\src\\WebApi\\Fiap.TechChallenge.Fase1.WebAPI\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\caios\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "C:\\Users\\caios\\OneDrive\\Área de Trabalho\\backup\\Fiap-TechChallenge-Fase1\\src\\Services\\Fiap.TechChallenge.Fase1.Aplicacao\\Fiap.TechChallenge.Fase1.Aplicacao.csproj": {
+                "projectPath": "C:\\Users\\caios\\OneDrive\\Área de Trabalho\\backup\\Fiap-TechChallenge-Fase1\\src\\Services\\Fiap.TechChallenge.Fase1.Aplicacao\\Fiap.TechChallenge.Fase1.Aplicacao.csproj"
+              },
+              "C:\\Users\\caios\\OneDrive\\Área de Trabalho\\backup\\Fiap-TechChallenge-Fase1\\src\\Services\\Fiap.TechChallenge.Fase1.Data\\Fiap.TechChallenge.Fase1.Data.csproj": {
+                "projectPath": "C:\\Users\\caios\\OneDrive\\Área de Trabalho\\backup\\Fiap-TechChallenge-Fase1\\src\\Services\\Fiap.TechChallenge.Fase1.Data\\Fiap.TechChallenge.Fase1.Data.csproj"
+              },
+              "C:\\Users\\caios\\OneDrive\\Área de Trabalho\\backup\\Fiap-TechChallenge-Fase1\\src\\Services\\Fiap.TechChallenge.Fase1.IoC\\Fiap.TechChallenge.Fase1.IoC.csproj": {
+                "projectPath": "C:\\Users\\caios\\OneDrive\\Área de Trabalho\\backup\\Fiap-TechChallenge-Fase1\\src\\Services\\Fiap.TechChallenge.Fase1.IoC\\Fiap.TechChallenge.Fase1.IoC.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "EFCore.NamingConventions": {
+              "target": "Package",
+              "version": "[8.0.3, )"
+            },
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[8.0.5, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.4, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.4, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.4, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.4.0, )"
@@ -246,7 +553,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

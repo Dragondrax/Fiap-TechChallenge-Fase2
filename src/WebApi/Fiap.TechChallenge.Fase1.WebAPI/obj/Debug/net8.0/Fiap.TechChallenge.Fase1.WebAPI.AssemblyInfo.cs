@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Fiap.TechChallenge.Fase1.WebAPI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8e88ea5e46ceae8a4290ba93779a1113dc785caa")]
 [assembly: System.Reflection.AssemblyProductAttribute("Fiap.TechChallenge.Fase1.WebAPI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Fiap.TechChallenge.Fase1.WebAPI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
