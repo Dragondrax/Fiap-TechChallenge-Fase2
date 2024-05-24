@@ -17,20 +17,20 @@
 mono_crash.*
 
 # Build results
-[Dd]ebug/
-[Dd]ebugPublic/
-[Rr]elease/
-[Rr]eleases/
-x64/
-x86/
-[Ww][Ii][Nn]32/
-[Aa][Rr][Mm]/
-[Aa][Rr][Mm]64/
-bld/
-[Bb]in/
-[Oo]bj/
-[Ll]og/
-[Ll]ogs/
+*/[Dd]ebug/
+*/[Dd]ebugPublic/
+*/[Rr]elease/
+*/[Rr]eleases/
+*/x64/
+*/x86/
+*/[Ww][Ii][Nn]32/
+*/[Aa][Rr][Mm]/
+*/[Aa][Rr][Mm]64/
+*/bld/
+*/[Bb]in/
+*/[Oo]bj/
+*/[Ll]og/
+*/[Ll]ogs/
 
 # Visual Studio 2015/2017 cache/options directory
 .vs/
@@ -41,8 +41,8 @@ bld/
 Generated\ Files/
 
 # MSTest test Results
-[Tt]est[Rr]esult*/
-[Bb]uild[Ll]og.*
+*/[Tt]est[Rr]esult*/
+*/[Bb]uild[Ll]og.*
 
 # NUnit
 *.VisualState.xml
@@ -50,8 +50,8 @@ TestResult.xml
 nunit-*.xml
 
 # Build Results of an ATL Project
-[Dd]ebugPS/
-[Rr]eleasePS/
+*/[Dd]ebugPS/
+*/[Rr]eleasePS/
 dlldata.c
 
 # Benchmark Results
@@ -396,3 +396,28 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+/src/Core/Fiap.TechChallenge.Fase1.SharedKernel/bin/Debug/net8.0/Fiap.TechChallenge.Fase1.SharedKernel.deps.json
+*.dll
+/src/Core/Fiap.TechChallenge.Fase1.SharedKernel/obj/Debug/net8.0/.NETCoreApp,Version=v8.0.AssemblyAttributes.cs
+/src/Core/Fiap.TechChallenge.Fase1.SharedKernel/obj/Debug/net8.0
+/src/Core/Fiap.TechChallenge.Fase1.SharedKernel/obj
+/src/Services/Fiap.TechChallenge.Fase1.Aplicacao/bin/Debug/net8.0
+/src/Services/Fiap.TechChallenge.Fase1.Aplicacao/obj/Debug/net8.0
+/src/Services/Fiap.TechChallenge.Fase1.Aplicacao/obj
+/src/Services/Fiap.TechChallenge.Fase1.Data/bin/Debug/net8.0
+/src/Services/Fiap.TechChallenge.Fase1.Data/obj/Debug/net8.0
+/src/Services/Fiap.TechChallenge.Fase1.Data/obj
+/src/Services/Fiap.TechChallenge.Fase1.Dominio/obj
+/src/Services/Fiap.TechChallenge.Fase1.Dominio/bin/Debug/net8.0
+/src/Services/Fiap.TechChallenge.Fase1.Infraestructure/bin/Debug/net8.0
+/src/Services/Fiap.TechChallenge.Fase1.Infraestructure/obj/Debug/net8.0
+/src/Services/Fiap.TechChallenge.Fase1.Infraestructure/obj
+/src/Services/Fiap.TechChallenge.Fase1.IoC/bin/Debug/net8.0
+/src/Services/Fiap.TechChallenge.Fase1.IoC/obj/Debug/net8.0
+/src/Services/Fiap.TechChallenge.Fase1.IoC/obj
+/src/Tests/Fiap.TechChallenge.Fase1.Tests/bin/Debug/net8.0
+/src/Tests/Fiap.TechChallenge.Fase1.Tests/obj/Debug/net8.0
+/src/Tests/Fiap.TechChallenge.Fase1.Tests/obj
+/src/WebApi/Fiap.TechChallenge.Fase1.WebAPI/bin/Debug/net8.0
+/src/WebApi/Fiap.TechChallenge.Fase1.WebAPI/obj/Debug/net8.0
+/src/WebApi/Fiap.TechChallenge.Fase1.WebAPI/obj

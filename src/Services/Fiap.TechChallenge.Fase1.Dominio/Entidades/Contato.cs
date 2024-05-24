@@ -9,7 +9,8 @@ namespace Fiap.TechChallenge.Fase1.Data.Entidades
         public string Telefone { get; private set; }
         public string Email { get; private set; }
 
-        private Contato() { }
+        public Contato() { }
+
         public Contato(string nome, int DDD, string telefone, string email)
         {
             Nome = nome;
