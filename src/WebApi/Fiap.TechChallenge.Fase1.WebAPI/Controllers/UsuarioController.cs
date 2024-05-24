@@ -1,7 +1,10 @@
-﻿using Fiap.TechChallenge.Fase1.Dominio;
+﻿using Fiap.TechChallenge.Fase1.Data.Entidades;
+using Fiap.TechChallenge.Fase1.Dominio;
 using Fiap.TechChallenge.Fase1.Infraestructure.DTO;
 using Fiap.TechChallenge.Fase1.Infraestructure.DTO.Usuario;
 using Fiap.TechChallenge.Fase1.SharedKernel;
+using Fiap.TechChallenge.Fase1.WebAPI.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Fiap.TechChallenge.Fase1.WebAPI.Controllers
@@ -18,6 +21,7 @@ namespace Fiap.TechChallenge.Fase1.WebAPI.Controllers
         }
 
         [HttpPost("CriarUsuario")]
+        [Authorize]
         public async Task<IActionResult> SalvarNovoUsuario(CriarUsuarioDTO usuario)
         {
             var resultado = await _usuarioService.SalvarUsuario(usuario);
@@ -40,5 +44,6 @@ namespace Fiap.TechChallenge.Fase1.WebAPI.Controllers
             else
                 return BadRequest(resultado);
         }
+
     }
 }
