@@ -1,8 +1,8 @@
-﻿using Fiap.TechChallenge.Fase1.Data.Entidades;
+﻿using Fiap.TechChallenge.Fase1.Dominio.Entidades;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace Fiap.TechChallenge.Fase1.Data.Mapping
+namespace Fiap.TechChallenge.Fase1.Data
 {
     public class UsuarioMapping : IEntityTypeConfiguration<Usuario>
     {

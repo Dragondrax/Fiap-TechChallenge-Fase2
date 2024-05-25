@@ -1,21 +1,21 @@
 ﻿using Fiap.TechChallenge.Fase1.Data.Context;
 using Microsoft.EntityFrameworkCore;
 
-namespace Fiap.TechChallenge.Fase1.Data.Repository.Usuario
+namespace Fiap.TechChallenge.Fase1.Data.Repository
 {
-    public class UsuarioRepository : Repository<Entidades.Usuario>, IUsuarioRepository
+    public class UsuarioRepository : Repository<Dominio.Entidades.Usuario>, IUsuarioRepository
     {
         public UsuarioRepository(ContextTechChallenge db) : base(db)
         {
 
         }
 
-        public async Task<Entidades.Usuario> ObterPorEmailAsync(string email)
+        public async Task<Dominio.Entidades.Usuario> ObterPorEmailAsync(string email)
         {
             return await Db.Usuario.FirstOrDefaultAsync(x => x.Email == email && x.Excluido == false);
         }
 
-        public async Task<Entidades.Usuario> ObterPorIdAsync(Guid id)
+        public async Task<Dominio.Entidades.Usuario> ObterPorIdAsync(Guid id)
         {
             return await Db.Usuario.FirstOrDefaultAsync(x => x.Id == id && x.Excluido == false);
         }

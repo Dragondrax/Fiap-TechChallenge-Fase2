@@ -1,11 +1,12 @@
-﻿using Fiap.TechChallenge.Fase1.Infraestructure.DTO.Usuario;
+﻿using Fiap.TechChallenge.Fase1.Dominio;
+using Fiap.TechChallenge.Fase1.Infraestructure.DTO.Usuario;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 
-namespace Fiap.TechChallenge.Fase1.Dominio.Token
+namespace Fiap.TechChallenge.Fase1.Aplicacao
 {
     public class TokenService : ITokenService
     {

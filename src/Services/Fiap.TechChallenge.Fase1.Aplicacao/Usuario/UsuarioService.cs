@@ -1,6 +1,6 @@
-﻿using Fiap.TechChallenge.Fase1.Data.Entidades;
-using Fiap.TechChallenge.Fase1.Data.Repository;
-using Fiap.TechChallenge.Fase1.Dominio.Token;
+﻿using Fiap.TechChallenge.Fase1.Data.Repository;
+using Fiap.TechChallenge.Fase1.Dominio;
+using Fiap.TechChallenge.Fase1.Dominio.Entidades;
 using Fiap.TechChallenge.Fase1.Infraestructure.DTO;
 using Fiap.TechChallenge.Fase1.Infraestructure.DTO.Usuario;
 using Fiap.TechChallenge.Fase1.Infraestructure.Enum;
