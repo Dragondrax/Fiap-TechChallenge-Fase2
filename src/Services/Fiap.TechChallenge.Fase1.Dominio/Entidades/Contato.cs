@@ -17,6 +17,7 @@ namespace Fiap.TechChallenge.Fase1.Dominio.Entidades
             this.DDD = DDD;
             Telefone = telefone;
             Email = email;
+            AtualizarDtCadastro();
         }
 
         public void AlterarDDDRegiao(string nome, int DDD, string telefone, string email)
