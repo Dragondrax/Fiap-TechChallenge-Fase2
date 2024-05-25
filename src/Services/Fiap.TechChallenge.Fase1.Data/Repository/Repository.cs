@@ -1,14 +1,15 @@
-﻿using Fiap.TechChallenge.Fase1.SharedKernel.Data;
+﻿using Fiap.TechChallenge.Fase1.Data.Context;
+using Fiap.TechChallenge.Fase1.SharedKernel.Data;
 using Microsoft.EntityFrameworkCore;
 
 namespace Fiap.TechChallenge.Fase1.Data
 {
     public abstract class Repository<T> : IRepository<T> where T : Entity, new()
     {
-        protected readonly Data.Context.ContextTechChallenge Db;
+        protected readonly ContextTechChallenge Db;
         protected readonly DbSet<T> DbSet;
 
-        protected Repository(Data.Context.ContextTechChallenge db)
+        protected Repository(ContextTechChallenge db)
         {
             Db = db;
             DbSet = db.Set<T>();

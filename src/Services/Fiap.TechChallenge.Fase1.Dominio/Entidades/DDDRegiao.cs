@@ -1,7 +1,7 @@
 ﻿using Fiap.TechChallenge.Fase1.SharedKernel.Data;
 using System.Data;
 
-namespace Fiap.TechChallenge.Fase1.Data.Entidades
+namespace Fiap.TechChallenge.Fase1.Dominio.Entidades
 {
     public class DDDRegiao : Entity
     {

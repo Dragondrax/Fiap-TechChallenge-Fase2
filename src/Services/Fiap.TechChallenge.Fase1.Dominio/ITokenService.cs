@@ -1,6 +1,6 @@
 ﻿using Fiap.TechChallenge.Fase1.Infraestructure.DTO.Usuario;
 
-namespace Fiap.TechChallenge.Fase1.Dominio.Token
+namespace Fiap.TechChallenge.Fase1.Dominio
 {
     public interface ITokenService
     {

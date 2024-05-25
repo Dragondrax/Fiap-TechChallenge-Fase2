@@ -1,5 +1,4 @@
-﻿using Fiap.TechChallenge.Fase1.Data.Entidades;
-using Fiap.TechChallenge.Fase1.Data.Mapping;
+﻿using Fiap.TechChallenge.Fase1.Dominio.Entidades;
 using Fiap.TechChallenge.Fase1.SharedKernel.Data;
 using Microsoft.EntityFrameworkCore;
 

@@ -1,6 +1,6 @@
-﻿using Fiap.TechChallenge.Fase1.Data.Entidades;
-using Fiap.TechChallenge.Fase1.Data.Repository;
-using Fiap.TechChallenge.Fase1.Dominio.Token;
+﻿using Fiap.TechChallenge.Fase1.Data.Repository;
+using Fiap.TechChallenge.Fase1.Dominio;
+using Fiap.TechChallenge.Fase1.Dominio.Entidades;
 using Fiap.TechChallenge.Fase1.Infraestructure.DTO;
 using Fiap.TechChallenge.Fase1.Infraestructure.DTO.Usuario;
 using Fiap.TechChallenge.Fase1.Infraestructure.Enum;
@@ -8,7 +8,7 @@ using Fiap.TechChallenge.Fase1.SharedKernel;
 using Fiap.TechChallenge.Fase1.SharedKernel.Model;
 using static BCrypt.Net.BCrypt;
 
-namespace Fiap.TechChallenge.Fase1.Dominio
+namespace Fiap.TechChallenge.Fase1.Aplicacao
 {
     public class UsuarioService : IUsuarioService
     {
