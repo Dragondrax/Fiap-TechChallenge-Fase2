@@ -13,5 +13,15 @@ namespace Fiap.TechChallenge.Fase1.Data.Repository
         {
             return await Db.Contato.FirstOrDefaultAsync(x => x.Email == email && x.Excluido == false);
         }
+
+        public async Task<List<Dominio.Entidades.Contato>> BuscaContatosPorDDD(int DDD)
+        {
+            return await Db.Contato.Where(x => x.DDD == DDD && x.Excluido == false).ToListAsync();
+        }
+
+        public async Task<Dominio.Entidades.Contato> ObterPorIdAsync(Guid id)
+        {
+            return await Db.Contato.FirstOrDefaultAsync(x => x.Id == id && x.Excluido == false);
+        }
     }
 }

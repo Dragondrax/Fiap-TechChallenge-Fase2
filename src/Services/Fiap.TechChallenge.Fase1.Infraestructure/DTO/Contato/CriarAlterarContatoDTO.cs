@@ -5,15 +5,23 @@ using System.Linq;
 
 namespace Fiap.TechChallenge.Fase1.Infraestructure.DTO.Contato;
 
-public class CriarContatoDTO
+public class CriarAlterarContatoDTO
 {
     public string Nome { get; set; }
     public int DDD { get; set; }
     public string Telefone { get;  set; }
     public string Email { get; set; }
+
+    public CriarAlterarContatoDTO(string nome, int ddd, string telefone, string email)
+    {
+        Nome = nome;
+        DDD = ddd;
+        Telefone = telefone;
+        Email = email;
+    }
 }
 
-public class CriarContatoDTOValidator : AbstractValidator<CriarContatoDTO>
+public class CriarContatoDTOValidator : AbstractValidator<CriarAlterarContatoDTO>
 {
     public CriarContatoDTOValidator()
     {

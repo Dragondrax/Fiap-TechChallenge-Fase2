@@ -14,5 +14,7 @@ public static class MensagemErroContato
     public static string MENSAGEM_EMAIL_NAO_PODE_SER_NULO = "Ops, o email não pode ser nulo!";
     public static string MENSAGEM_EMAIL_NAO_ESTA_NO_FORMATO_CORRETO = "Ops, o email não está no formato correto!";
     public static string MENSAGEM_CONTATO_JA_EXISTENTE = "Ops, parece que esse email já existe na nossa base de dados!";
-
+    public static string MENSAGEM_LISTA_DE_CONTATO_VAZIA = "Ops, não foi encontrado nenhum contato para esse DDD!";
+    public static string MENSAGEM_CONTATO_NAO_EXISTE = "Ops, email não foi encontrado em nosso banco de dados!";
+    public static string MENSAGEM_CONTATO_NAO_ENCONTRADO = "Ops, parece que não encontramos o contato em nossa base de dados!";
 }
