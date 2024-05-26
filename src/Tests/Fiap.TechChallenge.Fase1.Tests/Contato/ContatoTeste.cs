@@ -1,13 +1,11 @@
 ﻿using Bogus;
 using Fiap.TechChallenge.Fase1.Dominio;
 using Fiap.TechChallenge.Fase1.Infraestructure.DTO.Contato;
-using Fiap.TechChallenge.Fase1.SharedKernel.Model;
 using Fiap.TechChallenge.Fase1.SharedKernel;
+using Fiap.TechChallenge.Fase1.SharedKernel.MensagensErro;
+using Fiap.TechChallenge.Fase1.SharedKernel.Model;
 using Moq;
 using Xunit;
-using Fiap.TechChallenge.Fase1.SharedKernel.MensagensErro;
-using Fiap.TechChallenge.Fase1.Aplicacao;
-using Fiap.TechChallenge.Fase1.Dominio.Entidades;
 
 namespace Fiap.TechChallenge.Fase1.Tests.Contato;
 

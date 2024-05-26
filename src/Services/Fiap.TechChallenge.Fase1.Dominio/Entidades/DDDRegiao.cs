@@ -4,11 +4,12 @@ namespace Fiap.TechChallenge.Fase1.Dominio.Entidades
 {
     public class DDDRegiao : Entity
     {
-        public int DDD { get; set; }
-        public string Estado { get; set; }
-        public string Regiao { get; set; }
+        public int DDD { get; private set; }
+        public string Estado { get; private set; }
+        public string Regiao { get; private set; }
 
         public DDDRegiao() { } 
+
         public DDDRegiao(int dDD, string estado, string regiao)
         {
             DDD = dDD;
