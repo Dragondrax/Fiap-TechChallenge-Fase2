@@ -32,9 +32,9 @@ namespace Fiap.TechChallenge.Fase1.Data
             Db?.Dispose();
         }
 
-        public async Task<T> ObterPorId(Guid id)
+        public async Task<T> ObterPorIdAsync(Guid id)
         {
-            return await DbSet.FindAsync(id);
+            return await DbSet.FirstOrDefaultAsync(x => x.Id == id && x.Excluido == false);
         }
 
         public async Task RemoverAsync(T entidade)

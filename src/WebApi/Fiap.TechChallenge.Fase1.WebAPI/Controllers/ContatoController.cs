@@ -8,12 +8,12 @@ namespace Fiap.TechChallenge.Fase1.WebAPI.Controllers;
 
 [Route("api/[controller]")]
 [ApiController]
+//[Authorize]
 public class ContatoController(IContatoService contatoService) : ControllerBase
 {
     private readonly IContatoService _contatoService = contatoService;
 
     [HttpPost("CriarContato")]
-    [Authorize]
     public async Task<IActionResult> SalvarNovoContato([FromBody] CriarAlterarContatoDTO contatoDTO)
     {
         var resultado = await _contatoService.SalvarContato(contatoDTO);
@@ -28,7 +28,6 @@ public class ContatoController(IContatoService contatoService) : ControllerBase
 
 
     [HttpGet("FiltrarPorDDD/{DDD}")]
-    [Authorize]
     public async Task<IActionResult> BuscarContatosPorDDD(int DDD)
     {
         var resultado = await _contatoService.BuscarContatosPorDDD(DDD);
@@ -44,7 +43,6 @@ public class ContatoController(IContatoService contatoService) : ControllerBase
     }
 
     [HttpPost("BuscarContatoPorEmail")]
-    [Authorize]
     public async Task<IActionResult> BuscarContatoPorEmail(BuscarContatoDTO contatoDTO)
     {
         var resultado = await _contatoService.BuscarContatoPorEmail(contatoDTO);
@@ -60,7 +58,6 @@ public class ContatoController(IContatoService contatoService) : ControllerBase
     }
 
     [HttpPut("AlterarContato")]
-    [Authorize]
     public async Task<IActionResult> AtualizarContato(CriarAlterarContatoDTO contatoDTO)
     {
         var resultado = await _contatoService.AlterarContato(contatoDTO);
@@ -76,7 +73,6 @@ public class ContatoController(IContatoService contatoService) : ControllerBase
     }
 
     [HttpDelete("RemoverContato")]
-    [Authorize]
     public async Task<IActionResult> RemoverContato(Guid id)
     {
         var resultado = await _contatoService.RemoverContato(id);

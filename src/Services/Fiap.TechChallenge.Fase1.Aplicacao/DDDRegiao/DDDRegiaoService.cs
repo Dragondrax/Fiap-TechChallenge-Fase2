@@ -1,5 +1,4 @@
-﻿using Fiap.TechChallenge.Fase1.Data;
-using Fiap.TechChallenge.Fase1.Dominio;
+﻿using Fiap.TechChallenge.Fase1.Dominio;
 
 namespace Fiap.TechChallenge.Fase1.Aplicacao.DDDRegiao;
 

@@ -33,14 +33,6 @@ public class CriarContatoDTOValidator : AbstractValidator<CriarAlterarContatoDTO
             .NotNull()
             .WithMessage(MensagemErroContato.MENSAGEM_NOME_NAO_PODE_SER_NULO);
 
-        RuleFor(x => x.DDD)
-            .NotEmpty()
-            .WithMessage(MensagemErroContato.MENSAGEM_DDD_NAO_PODE_SER_VAZIO)
-            .NotNull()
-            .WithMessage(MensagemErroContato.MENSAGEM_DDD_NAO_PODE_SER_NULO)
-            .Must(ddd => DDDValidator.DDDsValidos.Contains(ddd.ToString()))
-            .WithMessage(MensagemErroContato.MENSAGEM_DDD_INVALIDO);
-
         RuleFor(x => x.Telefone)
             .NotEmpty()
             .WithMessage(MensagemErroContato.MENSAGEM_TELEFONE_NAO_PODE_SER_VAZIO)
@@ -63,7 +55,7 @@ public static class DDDValidator
 {
     public static readonly HashSet<string> DDDsValidos = new()
     {
-        "11", "12", "13", "14", "15", "16", "17", "18", "19",
+        "0", "11", "12", "13", "14", "15", "16", "17", "18", "19",
         "21", "22", "24",
         "27", "28",
         "31", "32", "33", "34", "35", "37", "38",

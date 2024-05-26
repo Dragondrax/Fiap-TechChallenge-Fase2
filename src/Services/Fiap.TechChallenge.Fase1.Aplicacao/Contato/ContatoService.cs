@@ -1,5 +1,4 @@
-﻿using Fiap.TechChallenge.Fase1.Data;
-using Fiap.TechChallenge.Fase1.Dominio;
+﻿using Fiap.TechChallenge.Fase1.Dominio;
 using Fiap.TechChallenge.Fase1.Dominio.Entidades;
 using Fiap.TechChallenge.Fase1.Dominio.Model;
 using Fiap.TechChallenge.Fase1.Infraestructure.DTO.Contato;
@@ -35,14 +34,18 @@ public class ContatoService(IContatoRepository contatoRepository, IDDDRegiaoServ
             await _contatoRepository.AdicionarAsync(novoContato);
 
             Dominio.Entidades.DDDRegiao regiao = await _regiaoService.BuscarDDDRegiao(novoContato.DDD);
+            if (regiao is not null)
+            {
+                ContatoDTO contatoRetornoDTO = new(novoContato.Id, novoContato.Nome, novoContato.DDD, novoContato.Telefone, novoContato.Email);
 
-            ContatoDTO contatoRetornoDTO = new(novoContato.Id, novoContato.Nome, novoContato.DDD, novoContato.Telefone, novoContato.Email);
+                ResponseBuscarContato contatoRegiao = new(contatoRetornoDTO, regiao.Regiao, regiao.Estado);
 
-            ResponseBuscarContato contatoRegiao = new(contatoRetornoDTO, regiao.Regiao, regiao.Estado);
+                _mensagem.Add(MensagemErroGenerico.MENSAGEM_SUCESSO);
+                return new ResponseModel(_mensagem, true, contatoRegiao);
+            }
 
-            _mensagem.Add(MensagemErroGenerico.MENSAGEM_SUCESSO);
-
-            return new ResponseModel(_mensagem, true, contatoRegiao);
+            _mensagem.Add(MensagemErroContato.MENSAGEM_LISTA_DE_REGIAO_VAZIA);
+            return new ResponseModel(_mensagem, false, null);
         }
 
         _mensagem.Add(MensagemErroContato.MENSAGEM_CONTATO_JA_EXISTENTE);
@@ -76,17 +79,21 @@ public class ContatoService(IContatoRepository contatoRepository, IDDDRegiaoServ
         {
             Dominio.Entidades.DDDRegiao regiao = await _regiaoService.BuscarDDDRegiao(contato.DDD);
 
-            ContatoDTO contatoRetornoDTO = new(contato.Id, contato.Nome, contato.DDD, contato.Telefone, contato.Email);
-
-            ResponseBuscarContato contatoRegiao = new (contatoRetornoDTO, regiao.Regiao, regiao.Estado);
-
-            listaDeContatoComRegiao.Add(contatoRegiao);
+            if(regiao is not null)
+            {
+                ContatoDTO contatoRetornoDTO = new(contato.Id, contato.Nome, contato.DDD, contato.Telefone, contato.Email);
+                ResponseBuscarContato contatoRegiao = new(contatoRetornoDTO, regiao.Regiao, regiao.Estado);
+                listaDeContatoComRegiao.Add(contatoRegiao);
+                _mensagem.Add(MensagemErroGenerico.MENSAGEM_SUCESSO);
+            }
+            else
+            {
+                _mensagem.Add(MensagemErroContato.MENSAGEM_LISTA_DE_REGIAO_VAZIA);
+                return new ResponseModel(_mensagem, false, null);
+            }
         }
 
-        _mensagem.Add(MensagemErroGenerico.MENSAGEM_SUCESSO);
-
         return new ResponseModel(_mensagem, true, listaDeContatoComRegiao);
-
     }
 
     public async Task<ResponseModel> BuscarContatoPorEmail(BuscarContatoDTO contatoDTO)
@@ -166,5 +173,4 @@ public class ContatoService(IContatoRepository contatoRepository, IDDDRegiaoServ
         _mensagem.Add(MensagemErroContato.MENSAGEM_CONTATO_NAO_ENCONTRADO);
         return new ResponseModel(_mensagem, false, null);
     }
-    
 }

@@ -17,4 +17,5 @@ public static class MensagemErroContato
     public static string MENSAGEM_LISTA_DE_CONTATO_VAZIA = "Ops, não foi encontrado nenhum contato para esse DDD!";
     public static string MENSAGEM_CONTATO_NAO_EXISTE = "Ops, email não foi encontrado em nosso banco de dados!";
     public static string MENSAGEM_CONTATO_NAO_ENCONTRADO = "Ops, parece que não encontramos o contato em nossa base de dados!";
+    public static string MENSAGEM_LISTA_DE_REGIAO_VAZIA = "Ops, parece que não encontramos regiões em nossa base de dados!";
 }
