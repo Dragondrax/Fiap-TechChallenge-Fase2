@@ -12,6 +12,8 @@ public class CriarAlterarContatoDTO
     public string Telefone { get;  set; }
     public string Email { get; set; }
 
+    public CriarAlterarContatoDTO() { }
+
     public CriarAlterarContatoDTO(string nome, int ddd, string telefone, string email)
     {
         Nome = nome;
