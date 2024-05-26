@@ -1,19 +1,15 @@
 ﻿using Fiap.TechChallenge.Fase1.Dominio.Entidades;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Fiap.TechChallenge.Fase1.Infraestructure.DTO.Contato;
 
 namespace Fiap.TechChallenge.Fase1.Dominio.Model;
 
 public class ResponseBuscarContato
 {
-    public Contato Contato { get; set; }
+    public ContatoDTO Contato { get; set; }
     public string Regiao { get; set; }
     public string Estado { get; set; }
 
-    public ResponseBuscarContato(Contato contato, string regiao, string estado)
+    public ResponseBuscarContato(ContatoDTO contato, string regiao, string estado)
     {
         Contato = contato;
         Regiao = regiao;
