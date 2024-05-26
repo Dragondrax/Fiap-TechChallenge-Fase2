@@ -4,7 +4,7 @@ using FluentValidation;
 
 namespace Fiap.TechChallenge.Fase1.Infraestructure.DTO
 {
-    public class CriarUsuarioDTO
+    public class CriarAlterarUsuarioDTO
     {
         public string Nome { get; set; }
         public string Email { get; set; }
@@ -12,9 +12,9 @@ namespace Fiap.TechChallenge.Fase1.Infraestructure.DTO
         public Roles Role { get; set; }
     }
 
-    public class CriarUsuarioDTOValidator : AbstractValidator<CriarUsuarioDTO>
+    public class CriarAlterarUsuarioDTOValidator : AbstractValidator<CriarAlterarUsuarioDTO>
     {
-        public CriarUsuarioDTOValidator()
+        public CriarAlterarUsuarioDTOValidator()
         {
             RuleFor(x => x.Email)
                 .NotEmpty()

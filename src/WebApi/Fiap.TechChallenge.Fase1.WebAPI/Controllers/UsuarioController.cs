@@ -20,7 +20,7 @@ namespace Fiap.TechChallenge.Fase1.WebAPI.Controllers
         }
 
         [HttpPost("CriarUsuario")]
-        public async Task<IActionResult> SalvarNovoUsuario(CriarUsuarioDTO usuario)
+        public async Task<IActionResult> SalvarNovoUsuario(CriarAlterarUsuarioDTO usuario)
         {
             var resultado = await _usuarioService.SalvarUsuario(usuario);
             if (resultado.Sucesso == true)
@@ -48,6 +48,18 @@ namespace Fiap.TechChallenge.Fase1.WebAPI.Controllers
         public async Task<IActionResult> BuscarUsuario(BuscarUsuarioDTO usuario)
         {
             var resultado = await _usuarioService.BuscarUsuario(usuario);
+            if (resultado.Sucesso == true)
+                return Ok(resultado);
+            else if (resultado.Sucesso == false && resultado.Objeto is null && resultado.Mensagem.Any(x => String.IsNullOrEmpty(x)))
+                return StatusCode(500, MensagemErroGenerico.MENSAGEM_ERRO_500);
+            else
+                return BadRequest(resultado);
+        }
+
+        [HttpPut("AlterarUsuario")]
+        public async Task<IActionResult> RemoverUsuario(CriarAlterarUsuarioDTO usuario)
+        {
+            var resultado = await _usuarioService.AlterarUsuario(usuario);
             if (resultado.Sucesso == true)
                 return Ok(resultado);
             else if (resultado.Sucesso == false && resultado.Objeto is null && resultado.Mensagem.Any(x => String.IsNullOrEmpty(x)))
