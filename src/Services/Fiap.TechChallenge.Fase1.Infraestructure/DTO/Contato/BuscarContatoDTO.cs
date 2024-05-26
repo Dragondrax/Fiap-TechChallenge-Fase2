@@ -7,6 +7,12 @@ public class BuscarContatoDTO
 {
     public string Email { get; set; }
 
+    public BuscarContatoDTO() { }
+
+    public BuscarContatoDTO(string email)
+    {
+        Email = email;
+    }
 }
 
 public class BuscarContatoDTOValidator : AbstractValidator<BuscarContatoDTO>
