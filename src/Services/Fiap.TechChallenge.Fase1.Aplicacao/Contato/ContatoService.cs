@@ -3,11 +3,9 @@ using Fiap.TechChallenge.Fase1.Dominio;
 using Fiap.TechChallenge.Fase1.Dominio.Entidades;
 using Fiap.TechChallenge.Fase1.Dominio.Model;
 using Fiap.TechChallenge.Fase1.Infraestructure.DTO.Contato;
-using Fiap.TechChallenge.Fase1.Infraestructure.DTO.Usuario;
 using Fiap.TechChallenge.Fase1.SharedKernel;
 using Fiap.TechChallenge.Fase1.SharedKernel.MensagensErro;
 using Fiap.TechChallenge.Fase1.SharedKernel.Model;
-using FluentValidation;
 
 
 namespace Fiap.TechChallenge.Fase1.Aplicacao;
@@ -67,7 +65,7 @@ public class ContatoService(IContatoRepository contatoRepository, IDDDRegiaoServ
 
         List<Contato> listaDeContatos = await _contatoRepository.BuscaContatosPorDDD(DDD);
 
-        if (listaDeContatos.Count == 0)
+        if (!listaDeContatos.Any())
         {
             _mensagem.Add(MensagemErroContato.MENSAGEM_LISTA_DE_CONTATO_VAZIA);
 
