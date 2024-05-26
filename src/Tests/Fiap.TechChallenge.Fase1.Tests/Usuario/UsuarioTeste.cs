@@ -88,6 +88,7 @@ namespace Fiap.TechChallenge.Fase1.Tests.Usuario
             Assert.Equal(1, result.Mensagem.Count());
             Assert.Equal(MensagemErroGenerico.MENSAGEM_SUCESSO, result.Mensagem.First());
         }
+
         [Fact(DisplayName = "Autenticar Usuário - Login Incorreto")]
         [Trait("Usuario", "Login")]
         public async void AutenticarUsuarioLoginIncorreto()
@@ -161,6 +162,7 @@ namespace Fiap.TechChallenge.Fase1.Tests.Usuario
 
             return usuario;
         }
+
         private AutenticarUsuarioDTO CriarAutenticarValido()
         {
             return new AutenticarUsuarioDTO()

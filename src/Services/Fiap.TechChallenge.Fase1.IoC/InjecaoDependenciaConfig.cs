@@ -1,4 +1,5 @@
 ﻿using Fiap.TechChallenge.Fase1.Aplicacao;
+using Fiap.TechChallenge.Fase1.Aplicacao.DDDRegiao;
 using Fiap.TechChallenge.Fase1.Data;
 using Fiap.TechChallenge.Fase1.Data.Context;
 using Fiap.TechChallenge.Fase1.Data.Repository;
@@ -18,6 +19,8 @@ namespace Fiap.TechChallenge.Fase1.IoC
             services.AddScoped<IContatoRepository, ContatoRepository>();
             services.AddScoped<IContatoService, ContatoService>();
             services.AddScoped<ITokenService, TokenService>();
+            services.AddScoped<IDDDRegiaoService, DDDRegiaoService>();
+            services.AddScoped<IDDDRegiaoRepository, DDDRegiaoRepository>();
 
             return services;
         }
