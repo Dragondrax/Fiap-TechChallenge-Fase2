@@ -13,6 +13,7 @@
         public static string MENSAGEM_NOME_NAO_PODE_SER_VAZIO = "Ops, o nome não pode ser vazio!";
         public static string MENSAGEM_NOME_NAO_PODE_SER_NULO = "Ops, o nome não pode ser nulo!";
         public static string MENSAGEM_ROLE_NAO_PODE_SER_NULO = "Ops, o role não pode ser nulo!";
+        public static string MENSAGEM_ROLE_NAO_EXISTE = "Ops, o role não existe!";
         public static string MENSAGEM_SENHA_NAO_PODE_SER_VAZIO = "Ops, a senha não pode ser vazia!";
         public static string MENSAGEM_SENHA_NAO_PODE_SER_NULO = "Ops, a senha não pode ser vazia!";
         public static string MENSAGEM_SENHA_NAO_PODE_SER_MENOR_QUE_10_CARACTERES = "Ops, a senha não pode ser menor que 10 caracteres!";

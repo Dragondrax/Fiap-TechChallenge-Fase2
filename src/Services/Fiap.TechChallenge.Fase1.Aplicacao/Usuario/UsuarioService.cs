@@ -23,22 +23,22 @@ namespace Fiap.TechChallenge.Fase1.Aplicacao
             _tokenService = tokenService;
         }
 
-        public async Task<ResponseModel> SalvarUsuario(CriarAlterarUsuarioDTO usuarioDto)
+        public async Task<ResponseModel> SalvarUsuario(CriarAlterarUsuarioDTO usuarioDTO)
         {
-            var validacao = new CriarAlterarUsuarioDTOValidator().Validate(usuarioDto);
+            var validacao = new CriarAlterarUsuarioDTOValidator().Validate(usuarioDTO);
             if (!validacao.IsValid)
             {
                 _mensagem = validacao.Errors.Select(x => x.ErrorMessage).ToList();
                 return new ResponseModel(_mensagem, false, null);
             }
 
-            var usuario = await _usuarioRepository.ObterPorEmailAsync(usuarioDto.Email.ToLower());
+            var usuario = await _usuarioRepository.ObterPorEmailAsync(usuarioDTO.Email.ToLower());
 
             if (usuario is null)
             {
-                var hashSenha = await GerarHashSenhaUsuario(usuarioDto.Senha);
+                var hashSenha = await GerarHashSenhaUsuario(usuarioDTO.Senha);
 
-                Usuario novoUsuario = new (usuarioDto.Nome, usuarioDto.Email.ToLower(), hashSenha, usuarioDto.Role);
+                Usuario novoUsuario = new (usuarioDTO.Nome, usuarioDTO.Email.ToLower(), hashSenha, usuarioDTO.Role);
 
                 await _usuarioRepository.AdicionarAsync(novoUsuario);
 
@@ -52,23 +52,23 @@ namespace Fiap.TechChallenge.Fase1.Aplicacao
             return new ResponseModel(_mensagem, false, null);
         }
 
-        public async Task<ResponseModel> AutenticarUsuario(AutenticarUsuarioDTO usuarioDto)
+        public async Task<ResponseModel> AutenticarUsuario(AutenticarUsuarioDTO usuarioDTO)
         {
-            var validacao = new AutenticarUsuarioDTOValidator().Validate(usuarioDto);
+            var validacao = new AutenticarUsuarioDTOValidator().Validate(usuarioDTO);
             if (!validacao.IsValid)
             {
                 _mensagem = validacao.Errors.Select(x => x.ErrorMessage).ToList();
                 return new ResponseModel(_mensagem, false, null);
             }
 
-            var usuario = await _usuarioRepository.ObterPorEmailAsync(usuarioDto.Email.ToLower());
+            var usuario = await _usuarioRepository.ObterPorEmailAsync(usuarioDTO.Email.ToLower());
 
             if (usuario is not null)
             {
                 //Valida Senha
-                if (Verify(usuarioDto.Senha, usuario.Senha))
+                if (Verify(usuarioDTO.Senha, usuario.Senha))
                 {
-                    var token = await _tokenService.ObterToken(usuarioDto);
+                    var token = await _tokenService.ObterToken(usuarioDTO);
 
                     _mensagem.Add(MensagemErroGenerico.MENSAGEM_SUCESSO);
                     return new ResponseModel(_mensagem, true, token);
@@ -84,7 +84,7 @@ namespace Fiap.TechChallenge.Fase1.Aplicacao
             return await Task.FromResult(HashPassword(senha, WorkFactor));
         }
 
-        public async Task<ResponseModel> BuscarUsuario(BuscarUsuarioDTO usuarioDTO)
+        public async Task<ResponseModel> BuscarUsuarioPorEmail(BuscarUsuarioDTO usuarioDTO)
         {
             var validacao = new BuscarUsuarioDTOValidator().Validate(usuarioDTO);
             if (!validacao.IsValid)
@@ -107,16 +107,16 @@ namespace Fiap.TechChallenge.Fase1.Aplicacao
             return new ResponseModel(_mensagem, false, null);
         }
 
-        public async Task<ResponseModel> AlterarUsuario(CriarAlterarUsuarioDTO usuarioDto)
+        public async Task<ResponseModel> AlterarUsuario(CriarAlterarUsuarioDTO usuarioDTO)
         {
-            var validacao = new CriarAlterarUsuarioDTOValidator().Validate(usuarioDto);
+            var validacao = new CriarAlterarUsuarioDTOValidator().Validate(usuarioDTO);
             if (!validacao.IsValid)
             {
                 _mensagem = validacao.Errors.Select(x => x.ErrorMessage).ToList();
                 return new ResponseModel(_mensagem, false, null);
             }
 
-            var usuario = await _usuarioRepository.ObterPorEmailAsync(usuarioDto.Email.ToLower());
+            var usuario = await _usuarioRepository.ObterPorEmailAsync(usuarioDTO.Email.ToLower());
 
             if (usuario is not null)
             {
@@ -126,9 +126,9 @@ namespace Fiap.TechChallenge.Fase1.Aplicacao
                     return new ResponseModel(_mensagem, false, null);
                 }
 
-                var hashSenha = await GerarHashSenhaUsuario(usuarioDto.Senha);
+                var hashSenha = await GerarHashSenhaUsuario(usuarioDTO.Senha);
 
-                usuario.AlterarUsuario(usuarioDto.Nome, usuarioDto.Email.ToLower(), hashSenha, usuarioDto.Role);
+                usuario.AlterarUsuario(usuarioDTO.Nome, usuarioDTO.Email.ToLower(), hashSenha, usuarioDTO.Role);
 
                 await _usuarioRepository.AtualizarAsync(usuario);
 
