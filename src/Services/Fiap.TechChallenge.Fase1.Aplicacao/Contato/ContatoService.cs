@@ -36,9 +36,15 @@ public class ContatoService(IContatoRepository contatoRepository, IDDDRegiaoServ
 
             await _contatoRepository.AdicionarAsync(novoContato);
 
+            Dominio.Entidades.DDDRegiao regiao = await _regiaoService.BuscarDDDRegiao(novoContato.DDD);
+
+            ContatoDTO contatoRetornoDTO = new(novoContato.Id, novoContato.Nome, novoContato.DDD, novoContato.Telefone, novoContato.Email);
+
+            ResponseBuscarContato contatoRegiao = new(contatoRetornoDTO, regiao.Regiao, regiao.Estado);
+
             _mensagem.Add(MensagemErroGenerico.MENSAGEM_SUCESSO);
 
-            return new ResponseModel(_mensagem, true, novoContato);
+            return new ResponseModel(_mensagem, true, contatoRegiao);
         }
 
         _mensagem.Add(MensagemErroContato.MENSAGEM_CONTATO_JA_EXISTENTE);
@@ -72,7 +78,9 @@ public class ContatoService(IContatoRepository contatoRepository, IDDDRegiaoServ
         {
             Dominio.Entidades.DDDRegiao regiao = await _regiaoService.BuscarDDDRegiao(contato.DDD);
 
-            ResponseBuscarContato contatoRegiao = new (contato, regiao.Regiao, regiao.Estado);
+            ContatoDTO contatoRetornoDTO = new(contato.Id, contato.Nome, contato.DDD, contato.Telefone, contato.Email);
+
+            ResponseBuscarContato contatoRegiao = new (contatoRetornoDTO, regiao.Regiao, regiao.Estado);
 
             listaDeContatoComRegiao.Add(contatoRegiao);
         }
@@ -103,7 +111,9 @@ public class ContatoService(IContatoRepository contatoRepository, IDDDRegiaoServ
 
         Dominio.Entidades.DDDRegiao regiao = await _regiaoService.BuscarDDDRegiao(contato.DDD);
 
-        ResponseBuscarContato contatoRegiao = new (contato, regiao.Regiao, regiao.Estado);
+        ContatoDTO contatoRetornoDTO = new(contato.Id, contato.Nome, contato.DDD, contato.Telefone, contato.Email);
+
+        ResponseBuscarContato contatoRegiao = new (contatoRetornoDTO, regiao.Regiao, regiao.Estado);
 
         _mensagem.Add(MensagemErroGenerico.MENSAGEM_SUCESSO);
         return new ResponseModel(_mensagem, true, contatoRegiao);
@@ -131,8 +141,14 @@ public class ContatoService(IContatoRepository contatoRepository, IDDDRegiaoServ
 
         await _contatoRepository.AtualizarAsync(contato);
 
+        Dominio.Entidades.DDDRegiao regiao = await _regiaoService.BuscarDDDRegiao(contato.DDD);
+
+        ContatoDTO contatoRetornoDTO = new(contato.Id, contato.Nome, contato.DDD, contato.Telefone, contato.Email);
+
+        ResponseBuscarContato contatoRegiao = new(contatoRetornoDTO, regiao.Regiao, regiao.Estado);
+
         _mensagem.Add(MensagemErroGenerico.MENSAGEM_SUCESSO);
-        return new ResponseModel(_mensagem, true, contato);
+        return new ResponseModel(_mensagem, true, contatoRegiao);
     }
 
     public async Task<ResponseModel> RemoverContato(Guid id)
