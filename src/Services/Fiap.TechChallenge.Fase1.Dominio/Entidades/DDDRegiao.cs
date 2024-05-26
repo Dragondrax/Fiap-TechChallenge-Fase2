@@ -1,5 +1,4 @@
 ﻿using Fiap.TechChallenge.Fase1.SharedKernel.Data;
-using System.Data;
 
 namespace Fiap.TechChallenge.Fase1.Dominio.Entidades
 {
@@ -9,7 +8,7 @@ namespace Fiap.TechChallenge.Fase1.Dominio.Entidades
         public string Estado { get; private set; }
         public string Regiao { get; private set; }
 
-        private DDDRegiao() { } 
+        public DDDRegiao() { } 
         public DDDRegiao(int dDD, string estado, string regiao)
         {
             DDD = dDD;

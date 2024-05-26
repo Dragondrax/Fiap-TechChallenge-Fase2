@@ -1,6 +1,7 @@
 ﻿using Fiap.TechChallenge.Fase1.Data;
 using Fiap.TechChallenge.Fase1.Dominio;
 using Fiap.TechChallenge.Fase1.Dominio.Entidades;
+using Fiap.TechChallenge.Fase1.Dominio.Model;
 using Fiap.TechChallenge.Fase1.Infraestructure.DTO.Contato;
 using Fiap.TechChallenge.Fase1.Infraestructure.DTO.Usuario;
 using Fiap.TechChallenge.Fase1.SharedKernel;
@@ -11,9 +12,10 @@ using FluentValidation;
 
 namespace Fiap.TechChallenge.Fase1.Aplicacao;
 
-public class ContatoService(IContatoRepository contatoRepository) : IContatoService
+public class ContatoService(IContatoRepository contatoRepository, IDDDRegiaoService regiaoService) : IContatoService
 {
     private readonly IContatoRepository _contatoRepository = contatoRepository;
+    private readonly IDDDRegiaoService _regiaoService = regiaoService;
     private List<string> _mensagem = [];
 
     public async Task<ResponseModel> SalvarContato(CriarAlterarContatoDTO contatoDTO)
@@ -26,7 +28,7 @@ public class ContatoService(IContatoRepository contatoRepository) : IContatoServ
             return new ResponseModel(_mensagem, false, null);
         }
 
-        var contato = await _contatoRepository.ObterPorEmailAsync(contatoDTO.Email);
+        var contato = await _contatoRepository.ObterPorEmailAsync(contatoDTO.Email.ToLower());
 
         if (contato is null)
         {
@@ -55,7 +57,9 @@ public class ContatoService(IContatoRepository contatoRepository) : IContatoServ
             return new ResponseModel(_mensagem, false, null);
         }
 
-        List<Dominio.Entidades.Contato> listaDeContatos = await _contatoRepository.BuscaContatosPorDDD(DDD);
+        List<ResponseBuscarContato> listaDeContatoComRegiao = [];
+
+        List<Contato> listaDeContatos = await _contatoRepository.BuscaContatosPorDDD(DDD);
 
         if (listaDeContatos.Count == 0)
         {
@@ -64,9 +68,18 @@ public class ContatoService(IContatoRepository contatoRepository) : IContatoServ
             return new ResponseModel(_mensagem, false, null);
         }
 
+        foreach (var contato in listaDeContatos)
+        {
+            Dominio.Entidades.DDDRegiao regiao = await _regiaoService.BuscarDDDRegiao(contato.DDD);
+
+            ResponseBuscarContato contatoRegiao = new (contato, regiao.Regiao, regiao.Estado);
+
+            listaDeContatoComRegiao.Add(contatoRegiao);
+        }
+
         _mensagem.Add(MensagemErroGenerico.MENSAGEM_SUCESSO);
 
-        return new ResponseModel(_mensagem, true, listaDeContatos);
+        return new ResponseModel(_mensagem, true, listaDeContatoComRegiao);
 
     }
 
@@ -88,8 +101,12 @@ public class ContatoService(IContatoRepository contatoRepository) : IContatoServ
             return new ResponseModel(_mensagem, false, null);
         }
 
+        Dominio.Entidades.DDDRegiao regiao = await _regiaoService.BuscarDDDRegiao(contato.DDD);
+
+        ResponseBuscarContato contatoRegiao = new (contato, regiao.Regiao, regiao.Estado);
+
         _mensagem.Add(MensagemErroGenerico.MENSAGEM_SUCESSO);
-        return new ResponseModel(_mensagem, true, contato);
+        return new ResponseModel(_mensagem, true, contatoRegiao);
     }
 
     public async Task<ResponseModel> AlterarContato(CriarAlterarContatoDTO contatoDTO)
@@ -102,7 +119,7 @@ public class ContatoService(IContatoRepository contatoRepository) : IContatoServ
             return new ResponseModel(_mensagem, false, null);
         }
 
-        var contato = await _contatoRepository.ObterPorEmailAsync(contatoDTO.Email);
+        var contato = await _contatoRepository.ObterPorEmailAsync(contatoDTO.Email.ToLower());
 
         if (contato is null)
         {
@@ -110,7 +127,7 @@ public class ContatoService(IContatoRepository contatoRepository) : IContatoServ
             return new ResponseModel(_mensagem, false, null);
         }
 
-        contato.AlterarDDDRegiao(contatoDTO.Nome, contatoDTO.DDD, contatoDTO.Telefone, contatoDTO.Email);
+        contato.AlterarDDDRegiao(contatoDTO.Nome, contatoDTO.DDD, contatoDTO.Telefone, contatoDTO.Email.ToLower());
 
         await _contatoRepository.AtualizarAsync(contato);
 

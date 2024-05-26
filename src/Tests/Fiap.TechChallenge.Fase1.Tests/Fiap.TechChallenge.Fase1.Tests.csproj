@@ -29,4 +29,8 @@
     <ProjectReference Include="..\..\Services\Fiap.TechChallenge.Fase1.Dominio\Fiap.TechChallenge.Fase1.Dominio.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Contato\" />
+  </ItemGroup>
+
 </Project>
