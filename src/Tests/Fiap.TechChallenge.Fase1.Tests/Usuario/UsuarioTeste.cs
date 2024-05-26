@@ -30,7 +30,7 @@ namespace Fiap.TechChallenge.Fase1.Tests.Usuario
             var usuario = CriarUsuarioValido();
 
             //Action
-            _usuarioService.Setup(s => s.SalvarUsuario(It.IsAny<CriarUsuarioDTO>()))
+            _usuarioService.Setup(s => s.SalvarUsuario(It.IsAny<CriarAlterarUsuarioDTO>()))
                        .ReturnsAsync(CriarResponseModelSucesso());
 
             var usuarioService = _usuarioService.Object;
@@ -52,7 +52,7 @@ namespace Fiap.TechChallenge.Fase1.Tests.Usuario
             var usuario = CriarUsuarioInvalido();
 
             //Action
-            _usuarioService.Setup(s => s.SalvarUsuario(It.IsAny<CriarUsuarioDTO>()))
+            _usuarioService.Setup(s => s.SalvarUsuario(It.IsAny<CriarAlterarUsuarioDTO>()))
                        .ReturnsAsync(CriarResponseModelErroValidacao());
 
             var usuarioService = _usuarioService.Object;
@@ -114,7 +114,7 @@ namespace Fiap.TechChallenge.Fase1.Tests.Usuario
         [Trait("Categoria", "Validando Usuario")]
         private async void ValidacoesDeBuscaValido()
         {
-            var usuario = new BuscarUsuarioDTO(_faker.Name.FullName(), _faker.Internet.Email(), (Roles)_faker.Random.Number(0, 1)); ;
+            var usuario = new BuscarUsuarioDTO(_faker.Internet.Email()); ;
 
             var response = new ResponseModel(new List<string> { MensagemErroGenerico.MENSAGEM_SUCESSO }, true, usuario);
 
@@ -169,9 +169,9 @@ namespace Fiap.TechChallenge.Fase1.Tests.Usuario
                 Senha = _faker.Internet.Password(10),
             };
         }
-        private CriarUsuarioDTO CriarUsuarioValido()
+        private CriarAlterarUsuarioDTO CriarUsuarioValido()
         {
-            return new CriarUsuarioDTO()
+            return new CriarAlterarUsuarioDTO()
             {
                 Nome = _faker.Name.FullName(),
                 Email = _faker.Internet.Email(),
@@ -180,9 +180,9 @@ namespace Fiap.TechChallenge.Fase1.Tests.Usuario
             };
         }
 
-        private CriarUsuarioDTO CriarUsuarioInvalido()
+        private CriarAlterarUsuarioDTO CriarUsuarioInvalido()
         {
-            return new CriarUsuarioDTO()
+            return new CriarAlterarUsuarioDTO()
             {
                 Nome = _faker.Name.FullName(),
                 Email = _faker.Address.City(),
