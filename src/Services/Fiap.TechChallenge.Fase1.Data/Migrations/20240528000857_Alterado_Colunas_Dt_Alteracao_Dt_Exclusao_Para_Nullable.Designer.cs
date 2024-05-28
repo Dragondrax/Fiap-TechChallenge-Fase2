@@ -3,6 +3,7 @@ using System;
 using Fiap.TechChallenge.Fase1.Data.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -11,9 +12,11 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Fiap.TechChallenge.Fase1.Data.Migrations
 {
     [DbContext(typeof(ContextTechChallenge))]
-    partial class ContextTechChallengeModelSnapshot : ModelSnapshot
+    [Migration("20240528000857_Alterado_Colunas_Dt_Alteracao_Dt_Exclusao_Para_Nullable")]
+    partial class Alterado_Colunas_Dt_Alteracao_Dt_Exclusao_Para_Nullable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

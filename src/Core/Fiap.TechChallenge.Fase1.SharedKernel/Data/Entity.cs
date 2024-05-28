@@ -13,8 +13,8 @@ namespace Fiap.TechChallenge.Fase1.SharedKernel.Data
         public Guid Id { get; private set; }
         public bool Excluido { get; private set; }
         public DateTime Dt_Registro { get; private set; }
-        public DateTime Dt_Alteracao { get; private set; }
-        public DateTime Dt_Exclusao { get; private set; }
+        public DateTime? Dt_Alteracao { get; private set; }
+        public DateTime? Dt_Exclusao { get; private set; }
 
         protected void AtualizarDtCadastro()
         {
