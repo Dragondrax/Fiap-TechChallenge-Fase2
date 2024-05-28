@@ -49,7 +49,6 @@ public class ContatoService(IContatoRepository contatoRepository, IDDDRegiaoServ
         }
 
         _mensagem.Add(MensagemErroContato.MENSAGEM_CONTATO_JA_EXISTENTE);
-
         return new ResponseModel(_mensagem, false, null);
     }
 
@@ -84,7 +83,6 @@ public class ContatoService(IContatoRepository contatoRepository, IDDDRegiaoServ
                 ContatoDTO contatoRetornoDTO = new(contato.Id, contato.Nome, contato.DDD, contato.Telefone, contato.Email);
                 ResponseBuscarContato contatoRegiao = new(contatoRetornoDTO, regiao.Regiao, regiao.Estado);
                 listaDeContatoComRegiao.Add(contatoRegiao);
-                _mensagem.Add(MensagemErroGenerico.MENSAGEM_SUCESSO);
             }
             else
             {
@@ -93,6 +91,7 @@ public class ContatoService(IContatoRepository contatoRepository, IDDDRegiaoServ
             }
         }
 
+        _mensagem.Add(MensagemErroGenerico.MENSAGEM_SUCESSO);
         return new ResponseModel(_mensagem, true, listaDeContatoComRegiao);
     }
 

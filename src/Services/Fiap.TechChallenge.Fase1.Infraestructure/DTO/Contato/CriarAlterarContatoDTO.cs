@@ -33,6 +33,12 @@ public class CriarContatoDTOValidator : AbstractValidator<CriarAlterarContatoDTO
             .NotNull()
             .WithMessage(MensagemErroContato.MENSAGEM_NOME_NAO_PODE_SER_NULO);
 
+        RuleFor(x => x.DDD)
+            .NotNull()
+            .WithMessage(MensagemErroContato.MENSAGEM_DDD_NAO_PODE_SER_NULO)
+            .Must(ddd => DDDValidator.DDDsValidos.Contains(ddd.ToString()))
+            .WithMessage(MensagemErroContato.MENSAGEM_DDD_INVALIDO);
+
         RuleFor(x => x.Telefone)
             .NotEmpty()
             .WithMessage(MensagemErroContato.MENSAGEM_TELEFONE_NAO_PODE_SER_VAZIO)
