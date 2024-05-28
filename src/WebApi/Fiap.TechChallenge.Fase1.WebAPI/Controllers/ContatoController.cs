@@ -8,7 +8,7 @@ namespace Fiap.TechChallenge.Fase1.WebAPI.Controllers;
 
 [Route("api/[controller]")]
 [ApiController]
-//[Authorize]
+[Authorize]
 public class ContatoController(IContatoService contatoService) : ControllerBase
 {
     private readonly IContatoService _contatoService = contatoService;
