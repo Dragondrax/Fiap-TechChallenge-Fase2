@@ -49,8 +49,6 @@ bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImFkbWluQGdtYWls
 
 ## 🚀Utilizar o Sistema :)🚀
 
-Termine com um exemplo de como obter dados do sistema ou como usá-los para uma pequena demonstração.
-
 ## 🔩 Analise de Testes
 Foi realizado testes unitários utilizando xUnit.
 
