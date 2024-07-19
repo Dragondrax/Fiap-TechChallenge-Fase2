@@ -1,0 +1,59 @@
+services:
+  fiaptechchallengefase2.db:
+    image: postgres:latest
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: 102030
+      POSTGRES_USER: postgres
+    ports:
+      - 5432:5432
+    volumes:
+      - ./data/postgres:/var/lib/postgresql/data
+    networks:
+      - fiap-network
+
+
+  fiaptechchallengefase2.api:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    ports: 
+      - "8080:8080"
+    networks:
+      - fiap-network
+    depends_on:
+      - fiaptechchallengefase2.db
+    
+  grafana:
+    image: grafana/grafana-oss
+    container_name: grafana
+    restart: unless-stopped
+    environment: 
+      - GF_SECURITY_ADMIN_USER=admin
+      - GF_SECURITY_ADMIN_PASSWORD=admin
+      - GF_USERS_ALLOW_SIGN_UP=false
+    ports:
+      - '3000:3000'
+    volumes:
+      - 'grafana_storage:/var/lib/grafana'
+    networks:
+      - fiap-network
+
+  prometheus:
+    image: prom/prometheus
+    volumes:
+      - "./src/WebApi/Fiap.TechChallenge.Fase1.WebAPI/prometheus.yml:/etc/prometheus/prometheus.yml"
+    command:
+      - "--config.file=/etc/prometheus/prometheus.yml"
+    networks:
+      - fiap-network
+    ports:
+      - 9090:9090
+
+networks:
+  fiap-network:
+    name: fiap-network
+    driver: bridge
+
+volumes:
+  grafana_storage: {}

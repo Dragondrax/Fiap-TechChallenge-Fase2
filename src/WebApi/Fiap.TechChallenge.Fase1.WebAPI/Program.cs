@@ -83,15 +83,13 @@ builder.Services.AddSwaggerGen(c =>
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
+app.UseSwagger();
+app.UseSwaggerUI(c =>
 {
-    app.UseSwagger();
-    app.UseSwaggerUI(c =>
-    {
-        c.DefaultModelsExpandDepth(-1); // Disable swagger schemas at bottom
-    });
-}
+    c.DefaultModelsExpandDepth(-1); // Disable swagger schemas at bottom
+});
+
+PrometheusConfiguration.Handle(app);
 
 app.UseHttpsRedirection();
 

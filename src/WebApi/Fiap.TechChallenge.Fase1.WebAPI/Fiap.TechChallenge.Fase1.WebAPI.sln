@@ -6,6 +6,12 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fiap.TechChallenge.Fase1.WebAPI", "Fiap.TechChallenge.Fase1.WebAPI.csproj", "{8C41F3FA-C9FE-4B24-B637-32BC376E209A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{B0899FF5-553E-4C6B-B451-5D41794EDCCB}"
+	ProjectSection(SolutionItems) = preProject
+		.dockerignore = .dockerignore
+		docker-compose.yml = docker-compose.yml
+		launchSettings.json = launchSettings.json
+		prometheus.yml = prometheus.yml
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{B6DBC303-74AA-43B7-A200-4F2169756EAC}"
 EndProject
@@ -40,6 +46,8 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fiap.TechChallenge.Fase1.SharedKernel", "..\..\Core\Fiap.TechChallenge.Fase1.SharedKernel\Fiap.TechChallenge.Fase1.SharedKernel.csproj", "{AB82990C-7698-43DF-8501-477D0162CEAF}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fiap.TechChallenge.Fase1.Tests", "..\..\Tests\Fiap.TechChallenge.Fase1.Tests\Fiap.TechChallenge.Fase1.Tests.csproj", "{B9160930-A5EE-4965-B3E0-0F2542B90743}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{14CA301E-1C8B-436C-B23D-707337E2F644}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -79,6 +87,10 @@ Global
 		{B9160930-A5EE-4965-B3E0-0F2542B90743}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B9160930-A5EE-4965-B3E0-0F2542B90743}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B9160930-A5EE-4965-B3E0-0F2542B90743}.Release|Any CPU.Build.0 = Release|Any CPU
+		{14CA301E-1C8B-436C-B23D-707337E2F644}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14CA301E-1C8B-436C-B23D-707337E2F644}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14CA301E-1C8B-436C-B23D-707337E2F644}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14CA301E-1C8B-436C-B23D-707337E2F644}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -16,7 +16,6 @@ COPY ["src/Services/Fiap.TechChallenge.Fase1.IoC/Fiap.TechChallenge.Fase1.IoC.cs
 COPY ["src/Tests/Fiap.TechChallenge.Fase1.Tests/Fiap.TechChallenge.Fase1.Tests.csproj", "src/Tests/Fiap.TechChallenge.Fase1.Tests/"]
 
 RUN dotnet restore "src/WebApi/Fiap.TechChallenge.Fase1.WebAPI/Fiap.TechChallenge.Fase1.WebAPI.csproj"
-RUN dotnet restore "src/Tests/Fiap.TechChallenge.Fase1.Tests/Fiap.TechChallenge.Fase1.Tests.csproj"
 
 # Copiar o restante dos arquivos e construir o projeto
 COPY . .
