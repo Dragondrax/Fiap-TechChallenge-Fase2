@@ -422,3 +422,6 @@ FodyWeavers.xsd
 /src/WebApi/Fiap.TechChallenge.Fase1.WebAPI/obj/Debug/net8.0
 /src/WebApi/Fiap.TechChallenge.Fase1.WebAPI/obj
 /src/Tests/Fiap.TechChallenge.Fase1.Tests/bin/Release/net8.0/CoverletSourceRootsMapping_Fiap.TechChallenge.Fase1.Tests
+/src/Tests/Fiap.TechChallenge.Fase1.Integration.Test/bin
+/src/Tests/Fiap.TechChallenge.Fase1.Integration.Test/obj
+/src/WebApi/Fiap.TechChallenge.Fase1.Integracao.Tests/obj
