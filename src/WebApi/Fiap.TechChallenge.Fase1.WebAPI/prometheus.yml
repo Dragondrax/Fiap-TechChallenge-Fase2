@@ -5,3 +5,7 @@ scrape_configs:
    metrics_path: /metrics 
    static_configs:
     - targets: ['10.0.0.52:8080']
+ - job_name: 'zabbix'
+   metrics_path: /metrics
+   static_configs:
+    - targets: ['zabbix-server:10051']
