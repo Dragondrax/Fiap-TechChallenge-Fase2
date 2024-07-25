@@ -1,4 +1,5 @@
-﻿using Fiap.TechChallenge.Fase1.Dominio.Entidades;
+﻿using Fiap.TechChallenge.Fase1.Data.Seed;
+using Fiap.TechChallenge.Fase1.Dominio.Entidades;
 using Fiap.TechChallenge.Fase1.SharedKernel.Data;
 using Microsoft.EntityFrameworkCore;
 
@@ -23,6 +24,8 @@ namespace Fiap.TechChallenge.Fase1.Data.Context
             modelBuilder.ApplyConfiguration(new ContatoMapping());
             modelBuilder.ApplyConfiguration(new DDDRegiaoMapping());
             modelBuilder.ApplyConfiguration(new UsuarioMapping());
+            modelBuilder.AdicionarRegioes();
+            modelBuilder.AdicionarUsuarioPadraoAdministrador();
         }
 
         public async Task<bool> CommitAsync()
