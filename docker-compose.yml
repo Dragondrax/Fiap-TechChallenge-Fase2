@@ -33,6 +33,7 @@ services:
       - GF_SECURITY_ADMIN_USER=admin
       - GF_SECURITY_ADMIN_PASSWORD=admin
       - GF_USERS_ALLOW_SIGN_UP=false
+      - GF_INSTALL_PLUGINS=alexanderzobnin-zabbix-app
     ports:
       - '3000:3000'
     volumes:
@@ -41,19 +42,7 @@ services:
       - fiap-network
     depends_on:
       - fiaptechchallengefase2.api
-
-  prometheus:
-    image: prom/prometheus
-    volumes:
-      - "./src/WebApi/Fiap.TechChallenge.Fase1.WebAPI/prometheus.yml:/etc/prometheus/prometheus.yml"
-    command:
-      - "--config.file=/etc/prometheus/prometheus.yml"
-    networks:
-      - fiap-network
-    ports:
-      - 9090:9090
-    depends_on:
-      - fiaptechchallengefase2.api
+    
 
   zabbix-server:
     container_name: zabbix-server
@@ -70,29 +59,32 @@ services:
     depends_on:
       - fiaptechchallengefase2.db
     volumes:
-      - /usr/lib/zabbix/alertscripts:/usr/lib/zabbix/alertscripts
+      - zabbix-server-data:/var/lib/zabbix
+      - zabbix-snmptraps-data:/var/lib/zabbix/snmptraps
+      - zabbix-export-data:/var/lib/zabbix/export
     networks:
       - fiap-network
     ports:
       - '10051:10051'
 
   zabbix-agent:
+    image: zabbix/zabbix-agent:latest
     container_name: zabbix-agent
-    image: zabbix/zabbix-agent2:alpine-latest
-    user: root
+    restart: unless-stopped
+    depends_on:
+      - zabbix-server
+    environment:
+      ZBX_HOSTNAME: "zabbix-agent"
+      ZBX_SERVER_HOST: zabbix-server
+      ZBX_SERVER_PORT: '10051'
+      ZBX_SERVER_ACTIVE: zabbix-server
+      ALLOWED_HOSTS: zabbix-server
+    volumes:
+      - /:/rootfs:ro
+      - /var/run:/var/run
+    privileged: true
     networks:
       - fiap-network
-    links:
-      - zabbix-server
-    restart: always
-    privileged: true
-    volumes:
-      - /var/run:/var/run
-    ports:
-      - '10050:10050'
-    environment:
-      - ZBX_HOSTNAME=Zabbix server
-      - ZBX_SERVER_HOST=zabbix-server
 
   zabbix-web:
     image: zabbix/zabbix-web-nginx-pgsql:latest
@@ -115,10 +107,28 @@ services:
       - fiap-network
     links:
       - fiaptechchallengefase2.db
-
+    volumes:
+      - zabbix-web-data:/usr/share/zabbix
+  
+  prometheus:
+    image: prom/prometheus
+    volumes:
+      - "./src/WebApi/Fiap.TechChallenge.Fase1.WebAPI/prometheus.yml:/etc/prometheus/prometheus.yml"
+    command:
+      - "--config.file=/etc/prometheus/prometheus.yml"
+    networks:
+      - fiap-network
+    ports:
+      - 9090:9090
+    depends_on:
+      - fiaptechchallengefase2.api
 networks:
   fiap-network:
     driver: bridge
 
 volumes:
   grafana_storage: {}
+  zabbix-server-data:
+  zabbix-snmptraps-data:
+  zabbix-export-data:
+  zabbix-web-data:

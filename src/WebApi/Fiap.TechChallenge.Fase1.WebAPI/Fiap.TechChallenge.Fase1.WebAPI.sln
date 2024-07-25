@@ -47,8 +47,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fiap.TechChallenge.Fase1.Sh
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fiap.TechChallenge.Fase1.Tests", "..\..\Tests\Fiap.TechChallenge.Fase1.Tests\Fiap.TechChallenge.Fase1.Tests.csproj", "{B9160930-A5EE-4965-B3E0-0F2542B90743}"
 EndProject
-Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{14CA301E-1C8B-436C-B23D-707337E2F644}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -87,10 +85,6 @@ Global
 		{B9160930-A5EE-4965-B3E0-0F2542B90743}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B9160930-A5EE-4965-B3E0-0F2542B90743}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B9160930-A5EE-4965-B3E0-0F2542B90743}.Release|Any CPU.Build.0 = Release|Any CPU
-		{14CA301E-1C8B-436C-B23D-707337E2F644}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{14CA301E-1C8B-436C-B23D-707337E2F644}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{14CA301E-1C8B-436C-B23D-707337E2F644}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{14CA301E-1C8B-436C-B23D-707337E2F644}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
