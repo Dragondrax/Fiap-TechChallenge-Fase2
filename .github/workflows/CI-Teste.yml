@@ -1,0 +1,33 @@
+name: TechChallengeFase2 - .NET
+
+on:
+  push:
+    branches: [ "task/test-integration" ]
+  pull_request:
+    branches: [ "task/test-integration" ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    
+    - name: Setup do .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: 8.0
+        
+    - name: Restore dependencies # Restaura pacotes do Nuget
+      run: dotnet restore src/WebApi/Fiap.TechChallenge.Fase1.WebAPI/Fiap.TechChallenge.Fase1.WebAPI.sln
+    
+    - name: Build projeto # Realiza o build do projeto
+      run: dotnet build --no-restore src/WebApi/Fiap.TechChallenge.Fase1.WebAPI/Fiap.TechChallenge.Fase1.WebAPI.sln      
+  
+    - name: Testes Unitários do projeto e testes de Integração # Testes
+      run: dotnet test --no-build --verbosity normal src/WebApi/Fiap.TechChallenge.Fase1.WebAPI/Fiap.TechChallenge.Fase1.WebAPI.sln
+      
+    - name: Saída Texto Final
+      run: echo "Build projeto API, criação do banco, utilização das migrations e testes unitários/integração finalizados para a validação do Tech Challenge Fase 2."
