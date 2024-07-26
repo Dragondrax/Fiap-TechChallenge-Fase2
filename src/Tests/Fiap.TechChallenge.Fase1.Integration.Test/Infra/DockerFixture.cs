@@ -2,6 +2,7 @@
 using Docker.DotNet.Models;
 using Fiap.TechChallenge.Fase1.Data.Context;
 using Microsoft.EntityFrameworkCore;
+using Npgsql;
 
 namespace Fiap.TechChallenge.Fase1.Integration.Tests.Infra
 {
@@ -35,10 +36,10 @@ namespace Fiap.TechChallenge.Fase1.Integration.Tests.Infra
                     HostConfig = new HostConfig
                     {
                         PortBindings = new Dictionary<string, IList<PortBinding>>()
-                    {
-                        { "5432/tcp", new List<PortBinding> { new PortBinding { HostPort = "5432" } } }
-                    },
-                        PublishAllPorts = true // Optional: Set this to true if you want to publish all exposed ports
+                        {
+                            { "5432/tcp", new List<PortBinding> { new PortBinding { HostPort = "5432" } } }
+                        },
+                        PublishAllPorts = true 
                     }
                 }).GetAwaiter().GetResult();
 
@@ -50,9 +51,37 @@ namespace Fiap.TechChallenge.Fase1.Integration.Tests.Infra
                     .UseNpgsql(GetConnectionString())
                     .Options;
 
-                var context = new ContextTechChallenge(options);
-                context.Database.MigrateAsync().GetAwaiter().GetResult();
+                using (var context = new ContextTechChallenge(options))
+                {
+                    if (AguardarContainerPostgresEstarProntoParaConexao().GetAwaiter().GetResult())
+                        context.Database.MigrateAsync().GetAwaiter();
+                    else
+                        throw new Exception("Nao foi possivel gerar uma conexao com o postgres");
+                }
             }
+        }
+
+        private async Task<bool> AguardarContainerPostgresEstarProntoParaConexao()
+        {
+            var maximoTentativas = 20;
+
+            for (int i = 0; i < maximoTentativas; i++)
+            {
+                try
+                {
+                    using (var connection = new NpgsqlConnection(GetConnectionString()))
+                    {
+                        await connection.OpenAsync();
+                        return true;
+                    }
+                }
+                catch
+                {
+                    await Task.Delay(5000);
+                }
+            }
+
+            return false;
         }
 
         public string GetConnectionString()
