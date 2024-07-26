@@ -425,3 +425,4 @@ FodyWeavers.xsd
 /src/Tests/Fiap.TechChallenge.Fase1.Integration.Test/bin
 /src/Tests/Fiap.TechChallenge.Fase1.Integration.Test/obj
 /src/WebApi/Fiap.TechChallenge.Fase1.Integracao.Tests/obj
+/data/postgres
