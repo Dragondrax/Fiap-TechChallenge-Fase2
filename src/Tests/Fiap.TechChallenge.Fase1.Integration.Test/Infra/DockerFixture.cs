@@ -1,42 +1,35 @@
 ﻿using Docker.DotNet;
 using Docker.DotNet.Models;
 using Fiap.TechChallenge.Fase1.Data.Context;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Hosting.Server;
-using Microsoft.AspNetCore.TestHost;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Infrastructure;
-using Moq;
 
 namespace Fiap.TechChallenge.Fase1.Integration.Tests.Infra
 {
-    public class DockerFixture : IDockerFixture, IDisposable
+    public class DockerFixture : IDisposable
     {
-        private DockerClient _dockerClient;
         private string _containerId;
         private readonly string _environment;
-        public string GetConnectionString()
-        {
-            var _connectionString = $"Server=localhost;Port=5432;Database=techchallenge;User Id=postgres;Password=102030;";
-            return _connectionString;
-        }
+        private readonly string containerName = "postgres-fiap-integracao";
+        private readonly DockerClient _dockerClient = new DockerClientConfiguration().CreateClient();
 
-        public void Dispose()
+        public DockerFixture()
         {
-            _dockerClient.Containers.StopContainerAsync(_containerId, new ContainerStopParameters()).GetAwaiter().GetResult();
-            _dockerClient.Containers.RemoveContainerAsync(_containerId, new ContainerRemoveParameters()).GetAwaiter().GetResult();
-            _dockerClient.Dispose();
-        }
+            var existingContainer = _dockerClient.Containers.ListContainersAsync(new ContainersListParameters { All = true }).GetAwaiter().GetResult()
+                                                            .FirstOrDefault(c => c.Names.Contains($"/{containerName}"));
 
-        public void Handle()
-        {
-            try
+            if (existingContainer != null)
             {
-                _dockerClient = new DockerClientConfiguration().CreateClient();
-
+                _containerId = existingContainer.ID;
+                if (existingContainer.State != "running")
+                {
+                    _dockerClient.Containers.StartContainerAsync(_containerId, new ContainerStartParameters()).GetAwaiter().GetResult();
+                }
+            }
+            else
+            {
                 var createContainerResponse = _dockerClient.Containers.CreateContainerAsync(new CreateContainerParameters
                 {
-                    Name = "postgres-fiap-integracao",
+                    Name = containerName,
                     Image = "postgres",
                     Env = new List<string> { "POSTGRES_DB=techchallenge", "POSTGRES_USER=postgres", "POSTGRES_PASSWORD=102030" },
                     HostConfig = new HostConfig
@@ -57,16 +50,32 @@ namespace Fiap.TechChallenge.Fase1.Integration.Tests.Infra
                     .UseNpgsql(GetConnectionString())
                     .Options;
 
-                using (var context = new ContextTechChallenge(options))
+                var context = new ContextTechChallenge(options);
+                context.Database.MigrateAsync().GetAwaiter().GetResult();
+            }
+        }
+
+        public string GetConnectionString()
+        {
+            var _connectionString = $"Server=localhost;Port=5432;Database=techchallenge;User Id=postgres;Password=102030;";
+            return _connectionString;
+        }
+
+        public void Dispose()
+        {
+            var existingContainer = _dockerClient.Containers.ListContainersAsync(new ContainersListParameters { All = true }).GetAwaiter().GetResult()
+                    .FirstOrDefault(c => c.Names.Contains($"/{containerName}"));
+
+            if (existingContainer != null)
+            {
+                _containerId = existingContainer.ID;
+                if (existingContainer.State == "running")
                 {
-                    context.Database.Migrate();
+                    _dockerClient.Containers.StopContainerAsync(_containerId, new ContainerStopParameters()).GetAwaiter().GetResult();
+                    _dockerClient.Containers.RemoveContainerAsync(_containerId, new ContainerRemoveParameters()).GetAwaiter().GetResult();
+                    _dockerClient.Dispose();
                 }
             }
-            catch
-            {
-                Dispose();
-            }
-
         }
     }
 }
