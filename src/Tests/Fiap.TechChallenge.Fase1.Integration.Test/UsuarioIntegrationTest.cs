@@ -1,5 +1,6 @@
 using Fiap.TechChallenge.Fase1.Infraestructure.DTO.Usuario;
 using Fiap.TechChallenge.Fase1.Integration.Tests;
+using Fiap.TechChallenge.Fase1.Integration.Tests.Infra;
 using Microsoft.Extensions.Configuration;
 using System.Net;
 using System.Net.Http.Json;
@@ -9,6 +10,7 @@ namespace Fiap.TechChallenge.Fase1.Integration.Test
     public class UsuarioIntegrationTest
     {
         private readonly FiapTechChallengeWebApplicationFactory _app;
+        private DockerFixture _dockerFixture;
 
         public UsuarioIntegrationTest()
         {
@@ -43,6 +45,8 @@ namespace Fiap.TechChallenge.Fase1.Integration.Test
         [Fact]
         public async void Post_Busca_Usuario_Com_Sucesso()
         {
+            _dockerFixture = new DockerFixture();
+            _dockerFixture.Handle();
             // Arrange
             using var client = await _app.GetClientWithAccessTokenAsync();
 
