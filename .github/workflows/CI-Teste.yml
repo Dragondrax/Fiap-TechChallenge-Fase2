@@ -10,7 +10,7 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-
+  
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
@@ -20,17 +20,17 @@ jobs:
       with:
         dotnet-version: 8.0
         
-    - name: Setup Docke 
-      uses: docker/setup-buildx-action@v2
+    - name: Setup Docker com PostgresSQL
+      run: docker pull postgres
       
     - name: Restore dependencies # Restaura pacotes do Nuget
       run: dotnet restore src/WebApi/Fiap.TechChallenge.Fase1.WebAPI/Fiap.TechChallenge.Fase1.WebAPI.sln
     
     - name: Build projeto # Realiza o build do projeto
-      run: dotnet build --no-restore src/WebApi/Fiap.TechChallenge.Fase1.WebAPI/Fiap.TechChallenge.Fase1.WebAPI.sln      
+      run: dotnet build --configuration Release src/WebApi/Fiap.TechChallenge.Fase1.WebAPI/Fiap.TechChallenge.Fase1.WebAPI.sln      
   
     - name: Testes Unitários do projeto e testes de Integração # Testes
-      run: dotnet test --no-build --verbosity normal src/WebApi/Fiap.TechChallenge.Fase1.WebAPI/Fiap.TechChallenge.Fase1.WebAPI.sln
+      run: dotnet test --configuration Release --verbosity normal src/WebApi/Fiap.TechChallenge.Fase1.WebAPI/Fiap.TechChallenge.Fase1.WebAPI.sln
       
     - name: Saída Texto Final
       run: echo "Build projeto API, criação do banco, utilização das migrations e testes unitários/integração finalizados para a validação do Tech Challenge Fase 2."
