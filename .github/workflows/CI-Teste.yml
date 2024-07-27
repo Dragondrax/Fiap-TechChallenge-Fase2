@@ -28,9 +28,13 @@ jobs:
     
     - name: Build projeto # Realiza o build do projeto
       run: dotnet build --configuration Release src/WebApi/Fiap.TechChallenge.Fase1.WebAPI/Fiap.TechChallenge.Fase1.WebAPI.sln      
+    
+    - name: Remove existing PostgreSQL container if exists
+      run: |
+        docker rm -f postgres-fiap-integracao || true
   
     - name: Testes Unitários do projeto e testes de Integração # Testes
-      run: dotnet test --configuration Release --verbosity normal src/WebApi/Fiap.TechChallenge.Fase1.WebAPI/Fiap.TechChallenge.Fase1.WebAPI.sln
+      run: dotnet test --configuration Release --verbosity minimal src/WebApi/Fiap.TechChallenge.Fase1.WebAPI/Fiap.TechChallenge.Fase1.WebAPI.sln
       
     - name: Saída Texto Final
       run: echo "Build projeto API, criação do banco, utilização das migrations e testes unitários/integração finalizados para a validação do Tech Challenge Fase 2."
