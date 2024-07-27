@@ -1,17 +1,14 @@
-﻿using Fiap.TechChallenge.Fase1.Dominio.Entidades;
-using Fiap.TechChallenge.Fase1.Dominio.Model;
+﻿using Fiap.TechChallenge.Fase1.Dominio.Model;
 using Fiap.TechChallenge.Fase1.Infraestructure.DTO.Contato;
-using Fiap.TechChallenge.Fase1.Infraestructure.DTO.Usuario;
 using Fiap.TechChallenge.Fase1.Integration.Tests.Infra;
 using Fiap.TechChallenge.Fase1.Integration.Tests.Model;
-using Fiap.TechChallenge.Fase1.SharedKernel.Model;
-using System.Dynamic;
 using System.Net;
 using System.Net.Http.Json;
 using System.Text.Json;
 
 namespace Fiap.TechChallenge.Fase1.Integration.Tests;
 
+[Collection("Test Integration")]
 public class ContatoIntegrationTest
 {
     private readonly FiapTechChallengeWebApplicationFactory _app;
@@ -31,7 +28,7 @@ public class ContatoIntegrationTest
 
         CriarAlterarContatoDTO criarContato = new()
         {
-            Email = "emailCriarContato@gmail.com",
+            Email = "emailcriarcontato@gmail.com",
             Nome = "Nome Teste",
             Telefone = "994918888",
             DDD = 11,
@@ -53,7 +50,7 @@ public class ContatoIntegrationTest
 
         CriarAlterarContatoDTO criarContato = new()
         {
-            Email = "emailProcuraDDD@gmail.com",
+            Email = "emailprocuraddd@gmail.com",
             Nome = "Nome Teste",
             Telefone = "994918888",
             DDD = 11,
@@ -77,7 +74,7 @@ public class ContatoIntegrationTest
 
         CriarAlterarContatoDTO criarContato = new()
         {
-            Email = "emailBusca@gmail.com",
+            Email = "emailbusca@gmail.com",
             Nome = "Nome Teste",
             Telefone = "994918888",
             DDD = 11,
@@ -88,7 +85,7 @@ public class ContatoIntegrationTest
 
         BuscarContatoDTO buscarContato = new()
         {
-            Email = "emailBusca@gmail.com"
+            Email = "emailbusca@gmail.com"
         };
 
         // Act
@@ -119,7 +116,7 @@ public class ContatoIntegrationTest
         // Criar o contato
         var criarContato = new CriarAlterarContatoDTO
         {
-            Email = "alteraContato@gmail.com",
+            Email = "alteracontato@gmail.com",
             Nome = "Nome Teste",
             Telefone = "994918888",
             DDD = 11,
@@ -130,7 +127,7 @@ public class ContatoIntegrationTest
 
         var buscarContato = new BuscarContatoDTO
         {
-            Email = "alteraContato@gmail.com"
+            Email = "alteracontato@gmail.com"
         };
 
         var resultadoBuscar = await client.PostAsJsonAsync("/api/Contato/BuscarContatoPorEmail", buscarContato);
@@ -147,7 +144,7 @@ public class ContatoIntegrationTest
         // Preparar para alterar o contato
         var alterarContato = new CriarAlterarContatoDTO
         {
-            Email = "alteraContato@gmail.com", 
+            Email = "alteracontato@gmail.com", 
             Nome = "Nome Teste Alterado",
             Telefone = "994917188",
             DDD = 12,
@@ -158,14 +155,14 @@ public class ContatoIntegrationTest
         Assert.Equal(HttpStatusCode.OK, resultadoAlterar.StatusCode);
 
         // Verificar se a alteração foi bem-sucedida
-        //var resultadoBuscarAlterado = await client.PostAsJsonAsync("/api/Contato/BuscarContatoPorEmail", buscarContato);
-        //var modelAlterado = await resultadoBuscarAlterado.Content.ReadFromJsonAsync<ResponseModelTeste>();
-        //var contatoAlteradoJson = modelAlterado.Objeto.GetRawText();
-        //var contatoAlterado = JsonSerializer.Deserialize<ResponseBuscarContato>(contatoAlteradoJson, options);
+        var resultadoBuscarAlterado = await client.PostAsJsonAsync("/api/Contato/BuscarContatoPorEmail", buscarContato);
+        var modelAlterado = await resultadoBuscarAlterado.Content.ReadFromJsonAsync<ResponseModelTeste>();
+        var contatoAlteradoJson = modelAlterado.Objeto.GetRawText();
+        var contatoAlterado = JsonSerializer.Deserialize<ResponseBuscarContato>(contatoAlteradoJson, options);
 
-        //// Assert
-        //Assert.Equal(HttpStatusCode.OK, resultadoAlterar.StatusCode);
-        //Assert.Equal(alterarContato.Nome, contatoAlterado.Contato.Nome);
+        // Assert
+        Assert.Equal(HttpStatusCode.OK, resultadoAlterar.StatusCode);
+        Assert.Equal(alterarContato.Nome, contatoAlterado.Contato.Nome);
     }
 
     [Fact]
@@ -176,7 +173,7 @@ public class ContatoIntegrationTest
 
         CriarAlterarContatoDTO criarContato = new()
         {
-            Email = "emailDelete@gmail.com",
+            Email = "emaildelete@gmail.com",
             Nome = "Nome Teste",
             Telefone = "994918888",
             DDD = 11,
@@ -187,7 +184,7 @@ public class ContatoIntegrationTest
 
         BuscarContatoDTO buscarContato = new()
         {
-            Email = "emailDelete@gmail.com"
+            Email = "emaildelete@gmail.com"
         };
 
         var resultadoBuscar = await client.PostAsJsonAsync("/api/Contato/BuscarContatoPorEmail", buscarContato);
@@ -203,8 +200,6 @@ public class ContatoIntegrationTest
         };
 
         var contatoEncontrado = JsonSerializer.Deserialize<ResponseBuscarContato>(contatoEncontradoJson, options);
-
-
 
         // Act
         var resultado = await client.DeleteAsync($"/api/Contato/RemoverContato?id={contatoEncontrado.Contato.Id}");

@@ -1,11 +1,9 @@
-using Fiap.TechChallenge.Fase1.Dominio.Entidades;
 using Fiap.TechChallenge.Fase1.Infraestructure.DTO;
 using Fiap.TechChallenge.Fase1.Infraestructure.DTO.Usuario;
 using Fiap.TechChallenge.Fase1.Infraestructure.Enum;
 using Fiap.TechChallenge.Fase1.Integration.Tests;
 using Fiap.TechChallenge.Fase1.Integration.Tests.Infra;
 using Fiap.TechChallenge.Fase1.Integration.Tests.Model;
-using Fiap.TechChallenge.Fase1.SharedKernel.Model;
 using System.Net;
 using System.Net.Http.Json;
 using System.Text.Json;
@@ -76,7 +74,7 @@ namespace Fiap.TechChallenge.Fase1.Integration.Test
 
             CriarAlterarUsuarioDTO criarUsuarioDTO = new()
             {
-                Email = "emailCriarUsuario@gmail.com",
+                Email = "emailcriarusuario@gmail.com",
                 Nome = "Nome Teste",
                 Role = (Roles)1,
                 Senha = "senha123456"
@@ -97,7 +95,7 @@ namespace Fiap.TechChallenge.Fase1.Integration.Test
 
             CriarAlterarUsuarioDTO criarUsuarioDTO = new()
             {
-                Email = "emailAlteraUsuario@gmail.com",
+                Email = "emailalterausuario@gmail.com",
                 Nome = "Nome Teste",
                 Role = (Roles)1,
                 Senha = "senha12345678"
@@ -108,7 +106,7 @@ namespace Fiap.TechChallenge.Fase1.Integration.Test
 
             CriarAlterarUsuarioDTO alterarUsuarioDTO = new()
             {
-                Email = "emailAlteraUsuario@gmail.com",
+                Email = "emailalterausuario@gmail.com",
                 Nome = "Nome Teste Alterado",
                 Role = (Roles)1,
                 Senha = "senha12345678"
@@ -140,7 +138,7 @@ namespace Fiap.TechChallenge.Fase1.Integration.Test
             // Criar usuário
             CriarAlterarUsuarioDTO criarUsuarioDTO = new()
             {
-                Email = "emailDeleteUsuario@gmail.com",
+                Email = "emaildeleteusuario@gmail.com",
                 Nome = "Nome Teste",
                 Role = (Roles)1,
                 Senha = "senha123456"
@@ -152,7 +150,7 @@ namespace Fiap.TechChallenge.Fase1.Integration.Test
             // Buscar usuário
             var usuario = new BuscarUsuarioDTO
             {
-                Email = "emailDeleteUsuario@gmail.com"
+                Email = "emaildeleteusuario@gmail.com"
             };
 
             var usuarioRetornado = await client.PostAsJsonAsync("/api/Usuario/BuscarUsuario", usuario);
@@ -181,7 +179,5 @@ namespace Fiap.TechChallenge.Fase1.Integration.Test
             // Assert
             Assert.Equal(HttpStatusCode.OK, resultado.StatusCode);
         }
-
-
     }
 }
