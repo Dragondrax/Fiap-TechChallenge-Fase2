@@ -20,6 +20,9 @@ jobs:
       with:
         dotnet-version: 8.0
         
+    - name: Setup Docke 
+      uses: docker/setup-buildx-action@v2
+      
     - name: Restore dependencies # Restaura pacotes do Nuget
       run: dotnet restore src/WebApi/Fiap.TechChallenge.Fase1.WebAPI/Fiap.TechChallenge.Fase1.WebAPI.sln
     

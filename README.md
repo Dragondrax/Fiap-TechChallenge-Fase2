@@ -47,7 +47,7 @@ bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImFkbWluQGdtYWls
 
 ![image](https://github.com/Dragondrax/Fiap-TechChallenge-Fase1/assets/18292105/dcce9941-6636-4bbc-b8ac-8ae6315c3188)
 
-## 🚀Utilizar o Sistema :)🚀
+## 🚀Utilizar o Sistema 🚀
 
 ## 🔩 Analise de Testes
 Foi realizado testes unitários utilizando xUnit.
