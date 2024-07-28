@@ -7,8 +7,7 @@ on:
     branches: [ "task/test-integration" ]
 
 jobs:
-  build:
-
+  build-and-test:
     runs-on: ubuntu-latest
   
     steps:
@@ -20,21 +19,20 @@ jobs:
       with:
         dotnet-version: 8.0
         
-    - name: Setup Docker com PostgresSQL
+    - name: Setup Docker para PostgresSQL
       run: docker pull postgres
       
-    - name: Restore dependencies # Restaura pacotes do Nuget
+    - name: Restore dependencias do Projeto 
       run: dotnet restore src/WebApi/Fiap.TechChallenge.Fase1.WebAPI/Fiap.TechChallenge.Fase1.WebAPI.sln
     
-    - name: Build projeto # Realiza o build do projeto
+    - name: Build projeto
       run: dotnet build --configuration Release src/WebApi/Fiap.TechChallenge.Fase1.WebAPI/Fiap.TechChallenge.Fase1.WebAPI.sln      
-    
-    - name: Remove existing PostgreSQL container if exists
-      run: |
-        docker rm -f postgres-fiap-integracao || true
-  
-    - name: Testes Unitários do projeto e testes de Integração # Testes
-      run: dotnet test --configuration Release --verbosity minimal src/WebApi/Fiap.TechChallenge.Fase1.WebAPI/Fiap.TechChallenge.Fase1.WebAPI.sln
+     
+    - name: Testes Unitários
+      run: dotnet test Fiap.TechChallenge.Fase1.Tests --configuration Release --verbosity minimal
+
+    - name: Testes de Integração 
+      run: dotnet test Fiap.TechChallenge.Fase1.Integration.Tests --configuration Release --verbosity minimal
       
-    - name: Saída Texto Final
+    - name: Saída Final
       run: echo "Build projeto API, criação do banco, utilização das migrations e testes unitários/integração finalizados para a validação do Tech Challenge Fase 2."
