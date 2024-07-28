@@ -98,3 +98,4 @@ Foi realizado testes de integração utilizando xUnit, Docker e Postgres.
 - Grafana
 - Prometheus
 - Zabbix
+.
