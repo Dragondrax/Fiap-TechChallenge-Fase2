@@ -80,6 +80,7 @@ builder.Services.AddSwaggerGen(c =>
     });
 });
 
+builder.Services.AddHealthChecks().AddNpgSql(builder.Configuration.GetConnectionString("conexao"), name: "Health Check PostgreSQL");
 
 var app = builder.Build();
 
@@ -91,10 +92,11 @@ app.UseSwaggerUI(c =>
 
 PrometheusConfiguration.Handle(app);
 
+app.UseHealthChecks("/healthPostgres");
+
 app.UseHttpsRedirection();
 
 app.UseCors("AllowAllButCredentials");
-
 
 app.UseAuthorization();
 
