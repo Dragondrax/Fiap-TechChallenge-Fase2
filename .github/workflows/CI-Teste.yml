@@ -29,10 +29,10 @@ jobs:
       run: dotnet build --configuration Release src/WebApi/Fiap.TechChallenge.Fase1.WebAPI/Fiap.TechChallenge.Fase1.WebAPI.sln      
      
     - name: Testes Unitários
-      run: dotnet test Fiap.TechChallenge.Fase1.Tests --configuration Release --verbosity minimal
+      run: dotnet test Fiap.TechChallenge.Fase1.Tests --configuration Release --verbosity minimal src/WebApi/Fiap.TechChallenge.Fase1.WebAPI/Fiap.TechChallenge.Fase1.WebAPI.sln
 
     - name: Testes de Integração 
-      run: dotnet test Fiap.TechChallenge.Fase1.Integration.Tests --configuration Release --verbosity minimal
+      run: dotnet test Fiap.TechChallenge.Fase1.Integration.Tests --configuration Release --verbosity minimal src/WebApi/Fiap.TechChallenge.Fase1.WebAPI/Fiap.TechChallenge.Fase1.WebAPI.sln
       
     - name: Saída Final
       run: echo "Build projeto API, criação do banco, utilização das migrations e testes unitários/integração finalizados para a validação do Tech Challenge Fase 2."
