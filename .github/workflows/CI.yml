@@ -2,9 +2,9 @@ name: TechChallengeFase2 - .NET
 
 on:
   push:
-    branches: [ "task/test-integration" ]
+    branches: [ "master" ]
   pull_request:
-    branches: [ "task/test-integration" ]
+    branches: [ "master" ]
 
 jobs:
   build-and-test:
