@@ -1,5 +1,5 @@
-# Fiap-TechChallenge-Fase1
-Esse projeto foi desenvolvido com intuito de colocar em prática todos os conceitos aprendidos na Fase 1 da Pós Graduação da FIAP.
+# Fiap-TechChallenge-Fase2
+Esse projeto foi desenvolvido com intuito de colocar em prática todos os conceitos aprendidos na Fase 2 da Pós Graduação da FIAP.
 
 |Alunos| E-mail|
 |------|-------|
@@ -18,18 +18,17 @@ Essas instruções permitirão que você obtenha uma cópia do projeto em opera�
 
 ## 🔧 Instalação
 1. Iniciar o Docker no seu computador
-2. Abrir o prompt de comando e rodar o seguinte comando:
+2. Abrir o prompt de comando na raiz do projeto, onde fica localizado o arquivo "docker-compose.yml" e executar o comando:
 ~~~docker
-docker run -d --name postgres-fiap -e POSTGRES_PASSWORD=102030 -p 5432:5432 postgres:latest
+docker-compose up -d --build
 ~~~
 3. Certificar-se que o Banco de Dados (Postgres) está rodando no seu docker (Status: "Running")
 4. Conectar o pgAdmin ao seu banco de dados (Postgres), utilizando as configurações setadas.
-5. Verificar se o appsettings.json está de acordo com as configurações setadas no docker para o Postgres.
+5. Verificar se o appsettings.json está de acordo com as configurações setadas no docker para o Postgres. (Necessário apontar para o ipv4 da sua máquina local)
 6. Abrir o Console do Visual Studio: Ferramentas -> Gerenciador de Pacotes do Nuget -> Console do Gerenciador de Pacotes
 7. No Console escolher o projeto padrão Fiap.TechChallenge.Fase1.Data
 8. Executar o comando Update-Database
-9. Retornar ao PgAdmin, acessar o database techchallenge e executar o script abaixo:
-[LINK SQL](https://docs.google.com/document/d/1vkQQdI2xsJpesB9wrRecEG6BuwqpeIeFEeA5YF4bQf8/edit?usp=sharing)
+9. Na solução em src => Services => Fiap.TechChallenge.Fase1.Infraestructure => Grafana => existe um arquivo .json, nele contem a importação do dashboard do grafana.
 10. Rodar o projeto
 11. Autenticar se utilizando o usuário abaixo:
 
@@ -51,6 +50,7 @@ bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImFkbWluQGdtYWls
 
 ## 🔩 Analise de Testes
 Foi realizado testes unitários utilizando xUnit.
+Foi realizado testes de integração utilizando xUnit, Docker e Postgres.
 
 ![image](https://github.com/Dragondrax/Fiap-TechChallenge-Fase1/assets/18292105/25ace85c-8689-4531-9cce-081667e40884)
 
@@ -65,3 +65,6 @@ Foi realizado testes unitários utilizando xUnit.
 - Moq
 - DotNet 8.0
 - BCrypt
+- Grafana
+- Prometheus
+- Zabbix
