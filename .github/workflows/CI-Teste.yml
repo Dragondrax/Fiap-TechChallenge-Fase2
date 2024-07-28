@@ -32,7 +32,7 @@ jobs:
       run: dotnet test --configuration Release --verbosity minimal src/Tests/Fiap.TechChallenge.Fase1.Tests
 
     - name: Testes de Integração 
-      run: dotnet test --configuration Release --verbosity minimal src/Tests/Fiap.TechChallenge.Fase1.Integration.Tests
+      run: dotnet test --configuration Release --verbosity normal src/Tests/Fiap.TechChallenge.Fase1.Integration.Test
       
     - name: Saída Final
       run: echo "Build projeto API, criação do banco, utilização das migrations e testes unitários/integração finalizados para a validação do Tech Challenge Fase 2."
