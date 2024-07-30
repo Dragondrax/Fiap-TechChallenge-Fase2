@@ -43,27 +43,45 @@ docker-compose up -d --build
   ![image](https://github.com/user-attachments/assets/ace86001-55fd-45bc-adce-6032d06db228)
 9. Configurar Grafana: 
   - Acesse localhost:3000
-  - Vá em Connection adicione o datasource do zabbix no grafana:-> http://192.168.15.6:8081/api_jsonrpc.php (Utilizar ipv4 da maquina local)
-  - Em Zabbix Connection, configurar o usuario padrão que foi utilizado para logar no Zabbix Web
-  - Usuario: Admin
-  - Senha: zabbix
-10. Na solução em src => Services => Fiap.TechChallenge.Fase1.Infraestructure => Grafana => existe um arquivo .json, nele contem a importação do dashboard do grafana.
+  - Vá em Connection adicione o datasource do zabbix no grafana
+  - Em Zabbix Connection, configurar URL: 
+    - http://ipMaquinaIPV4:8081/api_jsonrpc.php (Utilizar ipv4 da maquina local)
+      ![image](https://github.com/user-attachments/assets/dc7b2347-4dbb-4ebf-b0e3-8edc80208b05)
+  - O usuario padrão que foi utilizado para logar no Zabbix Web
+    - Usuario: Admin
+    - Senha: zabbix
+      ![image](https://github.com/user-attachments/assets/3aed0509-c918-4fe9-90ee-abeb737151eb)
+      
 11. Dentro do Grafana: 
   - Acesse o menu de Data Source
   - Adicione um novo data source do Prometheus
-  - DataSource Prometheus: http://192.168.15.6:9090/ (ip da maquina)
-12. Apos configurar o Prometheus: 
+  - DataSource Prometheus: http://ipMaquinaIPV4:9090/
+    ![image](https://github.com/user-attachments/assets/b4a7dc1f-a38b-4e03-9315-02fec9d78012)
+  - Save e Test
+
+12.Dentro do Grafana Menu esquerdo:
+  - Entrar em Dashboard:
+  - 
+    ![image](https://github.com/user-attachments/assets/dd9b036a-7b0b-4c38-b5c6-1764db04801a)
+  - Na solução em src => Services => Fiap.TechChallenge.Fase1.Infraestructure => Grafana => existe um arquivo .json, nele contem a importação do dashboard do grafana.
+    - Pegar essa configuração e clicar em New -> Import
+      - ![image](https://github.com/user-attachments/assets/52ff883f-675a-4d96-b407-3513aa31715f)
+    - Colar o conteúdo do arquivo .json e deposi Load
+      ![image](https://github.com/user-attachments/assets/92c39a80-9df1-4d3e-a59f-68f19667167e)
+    - Import:
+      ![image](https://github.com/user-attachments/assets/8fb8c860-f616-4846-97c1-f6a0d43b0366)
+      
+13. Apos configurar o Prometheus: 
   - Ir em Administration 
   - Plugins and Data 
   - Plugins 
   - Pesquisar por Zabbix 
   - Habilitar o plugin, clicando o botao em "Enabled"
-13. Resultado Grafana
+14. Resultado Grafana
     ![image](https://github.com/user-attachments/assets/5c5dcc2b-1f42-45d0-9198-31cc6fa8a979)
 
-14. Rodar o projeto
-15. Autenticar se utilizando o usuário abaixo:
-
+15. Rodar o projeto
+16. Autenticar se utilizando o usuário abaixo:
 Usuario Padrão <br/>
 
 |E-mail| Senha|
