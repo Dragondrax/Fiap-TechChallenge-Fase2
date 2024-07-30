@@ -54,7 +54,7 @@ builder.Services.AddDbContext<Fiap.TechChallenge.Fase1.Data.Context.ContextTechC
 
 builder.Services.AddSwaggerGen(c =>
 {
-    c.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo { Title = "Tech Challenge - Fase 1" });
+    c.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo { Title = "Tech Challenge - Fase 2" });
     c.AddSecurityDefinition("Bearer", new Microsoft.OpenApi.Models.OpenApiSecurityScheme
     {
         Description = "JWT Authorization Header - Digite Bearer [espaço] e então seu token.",
