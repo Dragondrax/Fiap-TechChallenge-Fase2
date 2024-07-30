@@ -41,10 +41,12 @@ docker-compose up -d --build
   ![image](https://github.com/user-attachments/assets/0e66850a-2702-4d48-a12e-68acb8f3a29d)
   - Aguarde alguns minutos até que o host esteja assim
   ![image](https://github.com/user-attachments/assets/ace86001-55fd-45bc-adce-6032d06db228)
-9. Adicionando o datasource do zabbix no grafana ->  Connection -> http://192.168.15.6:8081/api_jsonrpc.php (Utilizar ipv4 da maquina local)
+9. Configurar Grafana: 
+  - Acesse localhost:3000
+  - Vá em Connection adicione o datasource do zabbix no grafana:-> http://192.168.15.6:8081/api_jsonrpc.php (Utilizar ipv4 da maquina local)
   - Em Zabbix Connection, configurar o usuario padrão que foi utilizado para logar no Zabbix Web
-    - Usuario: Admin
-    - Senha: zabbix
+  - Usuario: Admin
+  - Senha: zabbix
 10. Na solução em src => Services => Fiap.TechChallenge.Fase1.Infraestructure => Grafana => existe um arquivo .json, nele contem a importação do dashboard do grafana.
 11. Dentro do Grafana: 
   - Acesse o menu de Data Source
